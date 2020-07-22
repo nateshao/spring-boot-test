@@ -1,2 +1,2 @@
 # spring-boot-test
-SpringBoot 学习系列并深度学习Springboot
+SpringBoot 系列学习并深度学习Springboot
