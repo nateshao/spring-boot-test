@@ -1,4 +1,6 @@
 # nateshao-boot-03-actuator
+ 
+> 谷歌插件：Json Viewer
 
 > 本 demo 主要演示了如何在 Spring Boot 中通过 actuator 检查项目运行情况
 
