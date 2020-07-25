@@ -1,0 +1,15 @@
+2020-07-25 12:32:12.582  INFO 12436 --- [main] .n.NateshaoBoot05LogbackApplicationTests : Starting NateshaoBoot05LogbackApplicationTests on DESKTOP-1FD8RCV with PID 12436 (started by 邵桐杰 in F:\2020\xkcoding深度学习并实战 spring boot\learning\spring-boot-test\nateshao-boot-05-logback)
+2020-07-25 12:32:12.583  INFO 12436 --- [main] .n.NateshaoBoot05LogbackApplicationTests : No active profile set, falling back to default profiles: default
+2020-07-25 12:32:14.458  INFO 12436 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-25 12:32:14.839  INFO 12436 --- [main] .n.NateshaoBoot05LogbackApplicationTests : Started NateshaoBoot05LogbackApplicationTests in 3.161 seconds (JVM running for 5.98)
+2020-07-25 12:32:15.320  INFO 12436 --- [main] .n.NateshaoBoot05LogbackApplicationTests : info 级别日志文件输出
+2020-07-25 12:32:15.320  INFO 12436 --- [main] .n.NateshaoBoot05LogbackApplicationTests : info 级别日志文件输出
+2020-07-25 12:32:15.321  INFO 12436 --- [main] .n.NateshaoBoot05LogbackApplicationTests : info 级别日志文件输出
+2020-07-25 12:32:15.321  INFO 12436 --- [main] .n.NateshaoBoot05LogbackApplicationTests : info 级别日志文件输出
+2020-07-25 12:32:15.321  INFO 12436 --- [main] .n.NateshaoBoot05LogbackApplicationTests : info 级别日志文件输出
+2020-07-25 12:32:15.321  INFO 12436 --- [main] .n.NateshaoBoot05LogbackApplicationTests : info 级别日志文件输出
+2020-07-25 12:32:15.321  INFO 12436 --- [main] .n.NateshaoBoot05LogbackApplicationTests : info 级别日志文件输出
+2020-07-25 12:32:15.321  INFO 12436 --- [main] .n.NateshaoBoot05LogbackApplicationTests : info 级别日志文件输出
+2020-07-25 12:32:15.321  INFO 12436 --- [main] .n.NateshaoBoot05LogbackApplicationTests : info 级别日志文件输出
+2020-07-25 12:32:15.321  INFO 12436 --- [main] .n.NateshaoBoot05LogbackApplicationTests : info 级别日志文件输出
+2020-07-25 12:32:15.338  INFO 12436 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
