@@ -1,0 +1,25 @@
+server:
+  port: 8090
+
+# 暴露所有的actuator
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+# 指定 admin server 地址
+spring:
+  boot:
+    admin:
+      client:
+        url: http://localhost:8080
+  application:
+    name: nateshao-client
+
+# 指定日志文件生成的位置
+logging:
+  file:
+    name: 'logs/app.log'

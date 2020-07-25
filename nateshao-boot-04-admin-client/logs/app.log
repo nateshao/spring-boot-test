@@ -1,0 +1,48 @@
+2020-07-25 10:18:08.826  INFO 16772 --- [main] c.n.admin.Boot04AdminClientApplication   : Starting Boot04AdminClientApplication on DESKTOP-1FD8RCV with PID 16772 (F:\2020\xkcoding深度学习并实战 spring boot\learning\spring-boot-test\nateshao-boot-04-admin-client\target\classes started by 邵桐杰 in F:\2020\xkcoding深度学习并实战 spring boot\learning\spring-boot-test\nateshao-boot-04-admin-client)
+2020-07-25 10:18:08.830  INFO 16772 --- [main] c.n.admin.Boot04AdminClientApplication   : No active profile set, falling back to default profiles: default
+2020-07-25 10:18:09.902  INFO 16772 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2020-07-25 10:18:09.917  INFO 16772 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-25 10:18:09.918  INFO 16772 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-07-25 10:18:09.998  INFO 16772 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-25 10:18:09.998  INFO 16772 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1126 ms
+2020-07-25 10:18:10.231  INFO 16772 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-25 10:18:10.437  INFO 16772 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService
+2020-07-25 10:18:10.483  INFO 16772 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2020-07-25 10:18:10.528  INFO 16772 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2020-07-25 10:18:10.540  INFO 16772 --- [main] c.n.admin.Boot04AdminClientApplication   : Started Boot04AdminClientApplication in 2.518 seconds (JVM running for 3.285)
+2020-07-25 10:18:10.664  INFO 16772 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-25 10:18:10.664  INFO 16772 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-25 10:18:10.669  INFO 16772 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2020-07-25 10:18:10.747  WARN 16772 --- [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Failed to register application as Application(name=nateshao-client, managementUrl=http://DESKTOP-1FD8RCV:8090/actuator, healthUrl=http://DESKTOP-1FD8RCV:8090/actuator/health, serviceUrl=http://DESKTOP-1FD8RCV:8090/) at spring-boot-admin ([http://localhost:8090/instances]): 404 : [{"timestamp":"2020-07-25T02:18:10.710+00:00","status":404,"error":"Not Found","message":"","path":"/instances"}]. Further attempts are logged on DEBUG level
+2020-07-25 10:18:32.150  INFO 10484 --- [main] c.n.admin.Boot04AdminClientApplication   : Starting Boot04AdminClientApplication on DESKTOP-1FD8RCV with PID 10484 (F:\2020\xkcoding深度学习并实战 spring boot\learning\spring-boot-test\nateshao-boot-04-admin-client\target\classes started by 邵桐杰 in F:\2020\xkcoding深度学习并实战 spring boot\learning\spring-boot-test\nateshao-boot-04-admin-client)
+2020-07-25 10:18:32.153  INFO 10484 --- [main] c.n.admin.Boot04AdminClientApplication   : No active profile set, falling back to default profiles: default
+2020-07-25 10:18:33.051  INFO 10484 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2020-07-25 10:18:33.061  INFO 10484 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-25 10:18:33.062  INFO 10484 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-07-25 10:18:33.136  INFO 10484 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-25 10:18:33.136  INFO 10484 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 943 ms
+2020-07-25 10:18:33.395  INFO 10484 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-25 10:18:33.730  INFO 10484 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService
+2020-07-25 10:18:33.789  INFO 10484 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2020-07-25 10:18:33.838  INFO 10484 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2020-07-25 10:18:33.852  INFO 10484 --- [main] c.n.admin.Boot04AdminClientApplication   : Started Boot04AdminClientApplication in 2.145 seconds (JVM running for 2.9)
+2020-07-25 10:18:34.514  INFO 10484 --- [RMI TCP Connection(3)-172.20.10.3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-25 10:18:34.515  INFO 10484 --- [RMI TCP Connection(3)-172.20.10.3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-25 10:18:34.521  INFO 10484 --- [RMI TCP Connection(3)-172.20.10.3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2020-07-25 10:18:35.734  INFO 10484 --- [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Application registered itself as b44de5cbe050
+2020-07-25 10:18:44.182  INFO 9484 --- [main] c.n.admin.Boot04AdminClientApplication   : Starting Boot04AdminClientApplication on DESKTOP-1FD8RCV with PID 9484 (F:\2020\xkcoding深度学习并实战 spring boot\learning\spring-boot-test\nateshao-boot-04-admin-client\target\classes started by 邵桐杰 in F:\2020\xkcoding深度学习并实战 spring boot\learning\spring-boot-test\nateshao-boot-04-admin-client)
+2020-07-25 10:18:44.185  INFO 9484 --- [main] c.n.admin.Boot04AdminClientApplication   : No active profile set, falling back to default profiles: default
+2020-07-25 10:18:45.059  INFO 9484 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2020-07-25 10:18:45.067  INFO 9484 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-25 10:18:45.068  INFO 9484 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-07-25 10:18:45.135  INFO 9484 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-25 10:18:45.135  INFO 9484 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 906 ms
+2020-07-25 10:18:45.341  INFO 9484 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-25 10:18:45.533  INFO 9484 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService
+2020-07-25 10:18:45.580  INFO 9484 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2020-07-25 10:18:45.626  INFO 9484 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2020-07-25 10:18:45.637  INFO 9484 --- [main] c.n.admin.Boot04AdminClientApplication   : Started Boot04AdminClientApplication in 1.908 seconds (JVM running for 2.833)
+2020-07-25 10:18:45.771  INFO 9484 --- [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Application registered itself as b44de5cbe050
+2020-07-25 10:18:45.806  INFO 9484 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-25 10:18:45.806  INFO 9484 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-25 10:18:45.813  INFO 9484 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
