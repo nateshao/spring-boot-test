@@ -16,7 +16,6 @@
 
 	<name>spring-boot-demo-log-aop</name>
 	<description>Demo project for Spring Boot</description>
-
 	<parent>
 		<groupId>com.xkcoding</groupId>
 		<artifactId>spring-boot-demo</artifactId>
