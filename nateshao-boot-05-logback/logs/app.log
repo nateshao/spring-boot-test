@@ -1063,3 +1063,33 @@
 2020-07-29 23:35:02.174  INFO 20352 --- [main] .n.NateshaoBoot05LogbackApplicationTests : info 级别日志文件输出
 2020-07-29 23:35:02.174  INFO 20352 --- [main] .n.NateshaoBoot05LogbackApplicationTests : info 级别日志文件输出
 2020-07-29 23:35:02.194  INFO 20352 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-29 23:38:14.387  INFO 3368 --- [main] .n.NateshaoBoot05LogbackApplicationTests : Starting NateshaoBoot05LogbackApplicationTests on DESKTOP-1FD8RCV with PID 3368 (started by 邵桐杰 in F:\2020\xkcoding深度学习并实战 spring boot\learning\spring-boot-test\nateshao-boot-05-logback)
+2020-07-29 23:38:14.389  INFO 3368 --- [main] .n.NateshaoBoot05LogbackApplicationTests : No active profile set, falling back to default profiles: default
+2020-07-29 23:38:15.801  INFO 3368 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-29 23:38:16.218  INFO 3368 --- [main] .n.NateshaoBoot05LogbackApplicationTests : Started NateshaoBoot05LogbackApplicationTests in 2.38 seconds (JVM running for 4.114)
+2020-07-29 23:38:16.467  INFO 3368 --- [main] .n.NateshaoBoot05LogbackApplicationTests : info 级别日志文件输出
+2020-07-29 23:38:16.467  INFO 3368 --- [main] .n.NateshaoBoot05LogbackApplicationTests : info 级别日志文件输出
+2020-07-29 23:38:16.467  INFO 3368 --- [main] .n.NateshaoBoot05LogbackApplicationTests : info 级别日志文件输出
+2020-07-29 23:38:16.467  INFO 3368 --- [main] .n.NateshaoBoot05LogbackApplicationTests : info 级别日志文件输出
+2020-07-29 23:38:16.467  INFO 3368 --- [main] .n.NateshaoBoot05LogbackApplicationTests : info 级别日志文件输出
+2020-07-29 23:38:16.467  INFO 3368 --- [main] .n.NateshaoBoot05LogbackApplicationTests : info 级别日志文件输出
+2020-07-29 23:38:16.467  INFO 3368 --- [main] .n.NateshaoBoot05LogbackApplicationTests : info 级别日志文件输出
+2020-07-29 23:38:16.467  INFO 3368 --- [main] .n.NateshaoBoot05LogbackApplicationTests : info 级别日志文件输出
+2020-07-29 23:38:16.467  INFO 3368 --- [main] .n.NateshaoBoot05LogbackApplicationTests : info 级别日志文件输出
+2020-07-29 23:38:16.467  INFO 3368 --- [main] .n.NateshaoBoot05LogbackApplicationTests : info 级别日志文件输出
+2020-07-29 23:38:16.487  INFO 3368 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-29 23:38:47.750  INFO 2632 --- [main] .n.NateshaoBoot05LogbackApplicationTests : Starting NateshaoBoot05LogbackApplicationTests on DESKTOP-1FD8RCV with PID 2632 (started by 邵桐杰 in F:\2020\xkcoding深度学习并实战 spring boot\learning\spring-boot-test\nateshao-boot-05-logback)
+2020-07-29 23:38:47.751  INFO 2632 --- [main] .n.NateshaoBoot05LogbackApplicationTests : No active profile set, falling back to default profiles: default
+2020-07-29 23:38:48.919  INFO 2632 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-29 23:38:49.220  INFO 2632 --- [main] .n.NateshaoBoot05LogbackApplicationTests : Started NateshaoBoot05LogbackApplicationTests in 1.961 seconds (JVM running for 3.381)
+2020-07-29 23:38:49.407  INFO 2632 --- [main] .n.NateshaoBoot05LogbackApplicationTests : info 级别日志文件输出
+2020-07-29 23:38:49.407  INFO 2632 --- [main] .n.NateshaoBoot05LogbackApplicationTests : info 级别日志文件输出
+2020-07-29 23:38:49.407  INFO 2632 --- [main] .n.NateshaoBoot05LogbackApplicationTests : info 级别日志文件输出
+2020-07-29 23:38:49.407  INFO 2632 --- [main] .n.NateshaoBoot05LogbackApplicationTests : info 级别日志文件输出
+2020-07-29 23:38:49.407  INFO 2632 --- [main] .n.NateshaoBoot05LogbackApplicationTests : info 级别日志文件输出
+2020-07-29 23:38:49.407  INFO 2632 --- [main] .n.NateshaoBoot05LogbackApplicationTests : info 级别日志文件输出
+2020-07-29 23:38:49.407  INFO 2632 --- [main] .n.NateshaoBoot05LogbackApplicationTests : info 级别日志文件输出
+2020-07-29 23:38:49.408  INFO 2632 --- [main] .n.NateshaoBoot05LogbackApplicationTests : info 级别日志文件输出
+2020-07-29 23:38:49.408  INFO 2632 --- [main] .n.NateshaoBoot05LogbackApplicationTests : info 级别日志文件输出
+2020-07-29 23:38:49.408  INFO 2632 --- [main] .n.NateshaoBoot05LogbackApplicationTests : info 级别日志文件输出
+2020-07-29 23:38:49.424  INFO 2632 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
