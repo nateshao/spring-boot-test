@@ -1,3 +1,4 @@
+<!--
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
     <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
@@ -12,60 +13,60 @@
     </appender>
 
     <appender name="FILE_INFO" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <!--如果只是想要 Info 级别的日志，只是过滤 info 还是会输出 Error 日志，因为 Error 的级别高， 所以我们使用下面的策略，可以避免输出 Error 的日志-->
+        &lt;!&ndash;如果只是想要 Info 级别的日志，只是过滤 info 还是会输出 Error 日志，因为 Error 的级别高， 所以我们使用下面的策略，可以避免输出 Error 的日志&ndash;&gt;
         <filter class="ch.qos.logback.classic.filter.LevelFilter">
-            <!--过滤 Error-->
+            &lt;!&ndash;过滤 Error&ndash;&gt;
             <level>ERROR</level>
-            <!--匹配到就禁止-->
+            &lt;!&ndash;匹配到就禁止&ndash;&gt;
             <onMatch>DENY</onMatch>
-            <!--没有匹配到就允许-->
+            &lt;!&ndash;没有匹配到就允许&ndash;&gt;
             <onMismatch>ACCEPT</onMismatch>
         </filter>
-        <!--日志名称，如果没有File 属性，那么只会使用FileNamePattern的文件路径规则如果同时有<File>和<FileNamePattern>，那么当天日志是<File>，明天会自动把今天的日志改名为今天的日期。即，<File> 的日志都是当天的。-->
-        <!--<File>logs/info.spring-boot-demo-logback.log</File>-->
-        <!--滚动策略，按照时间滚动 TimeBasedRollingPolicy-->
+        &lt;!&ndash;日志名称，如果没有File 属性，那么只会使用FileNamePattern的文件路径规则如果同时有<File>和<FileNamePattern>，那么当天日志是<File>，明天会自动把今天的日志改名为今天的日期。即，<File> 的日志都是当天的。&ndash;&gt;
+        &lt;!&ndash;<File>logs/info.spring-boot-demo-logback.log</File>&ndash;&gt;
+        &lt;!&ndash;滚动策略，按照时间滚动 TimeBasedRollingPolicy&ndash;&gt;
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <!--文件路径,定义了日志的切分方式——把每一天的日志归档到一个文件中,以防止日志填满整个磁盘空间-->
+            &lt;!&ndash;文件路径,定义了日志的切分方式——把每一天的日志归档到一个文件中,以防止日志填满整个磁盘空间&ndash;&gt;
             <FileNamePattern>logs/spring-boot-demo-logback/info.created_on_%d{yyyy-MM-dd}.part_%i.log</FileNamePattern>
-            <!--只保留最近90天的日志-->
+            &lt;!&ndash;只保留最近90天的日志&ndash;&gt;
             <maxHistory>90</maxHistory>
-            <!--用来指定日志文件的上限大小，那么到了这个值，就会删除旧的日志-->
-            <!--<totalSizeCap>1GB</totalSizeCap>-->
+            &lt;!&ndash;用来指定日志文件的上限大小，那么到了这个值，就会删除旧的日志&ndash;&gt;
+            &lt;!&ndash;<totalSizeCap>1GB</totalSizeCap>&ndash;&gt;
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-                <!-- maxFileSize:这是活动文件的大小，默认值是10MB,本篇设置为1KB，只是为了演示 -->
+                &lt;!&ndash; maxFileSize:这是活动文件的大小，默认值是10MB,本篇设置为1KB，只是为了演示 &ndash;&gt;
                 <maxFileSize>2MB</maxFileSize>
             </timeBasedFileNamingAndTriggeringPolicy>
         </rollingPolicy>
-        <!--<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">-->
-        <!--<maxFileSize>1KB</maxFileSize>-->
-        <!--</triggeringPolicy>-->
+        &lt;!&ndash;<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">&ndash;&gt;
+        &lt;!&ndash;<maxFileSize>1KB</maxFileSize>&ndash;&gt;
+        &lt;!&ndash;</triggeringPolicy>&ndash;&gt;
         <encoder>
             <pattern>%date [%thread] %-5level [%logger{50}] %file:%line - %msg%n</pattern>
-            <charset>UTF-8</charset> <!-- 此处设置字符集 -->
+            <charset>UTF-8</charset> &lt;!&ndash; 此处设置字符集 &ndash;&gt;
         </encoder>
     </appender>
 
     <appender name="FILE_ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <!--如果只是想要 Error 级别的日志，那么需要过滤一下，默认是 info 级别的，ThresholdFilter-->
+        &lt;!&ndash;如果只是想要 Error 级别的日志，那么需要过滤一下，默认是 info 级别的，ThresholdFilter&ndash;&gt;
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
             <level>Error</level>
         </filter>
-        <!--日志名称，如果没有File 属性，那么只会使用FileNamePattern的文件路径规则如果同时有<File>和<FileNamePattern>，那么当天日志是<File>，明天会自动把今天的日志改名为今天的日期。即，<File> 的日志都是当天的。-->
-        <!--<File>logs/error.spring-boot-demo-logback.log</File>-->
-        <!--滚动策略，按照时间滚动 TimeBasedRollingPolicy-->
+        &lt;!&ndash;日志名称，如果没有File 属性，那么只会使用FileNamePattern的文件路径规则如果同时有<File>和<FileNamePattern>，那么当天日志是<File>，明天会自动把今天的日志改名为今天的日期。即，<File> 的日志都是当天的。&ndash;&gt;
+        &lt;!&ndash;<File>logs/error.spring-boot-demo-logback.log</File>&ndash;&gt;
+        &lt;!&ndash;滚动策略，按照时间滚动 TimeBasedRollingPolicy&ndash;&gt;
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <!--文件路径,定义了日志的切分方式——把每一天的日志归档到一个文件中,以防止日志填满整个磁盘空间-->
+            &lt;!&ndash;文件路径,定义了日志的切分方式——把每一天的日志归档到一个文件中,以防止日志填满整个磁盘空间&ndash;&gt;
             <FileNamePattern>logs/spring-boot-demo-logback/error.created_on_%d{yyyy-MM-dd}.part_%i.log</FileNamePattern>
-            <!--只保留最近90天的日志-->
+            &lt;!&ndash;只保留最近90天的日志&ndash;&gt;
             <maxHistory>90</maxHistory>
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-                <!-- maxFileSize:这是活动文件的大小，默认值是10MB,本篇设置为1KB，只是为了演示 -->
+                &lt;!&ndash; maxFileSize:这是活动文件的大小，默认值是10MB,本篇设置为1KB，只是为了演示 &ndash;&gt;
                 <maxFileSize>2MB</maxFileSize>
             </timeBasedFileNamingAndTriggeringPolicy>
         </rollingPolicy>
         <encoder>
             <pattern>%date [%thread] %-5level [%logger{50}] %file:%line - %msg%n</pattern>
-            <charset>UTF-8</charset> <!-- 此处设置字符集 -->
+            <charset>UTF-8</charset> &lt;!&ndash; 此处设置字符集 &ndash;&gt;
         </encoder>
     </appender>
 
@@ -73,5 +74,20 @@
         <appender-ref ref="CONSOLE"/>
         <appender-ref ref="FILE_INFO"/>
         <appender-ref ref="FILE_ERROR"/>
+    </root>
+</configuration>-->
+
+<configuration>
+    <SpringProperty scope = "context" name = "project_name" source = "spring.application.name"/>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- encoders are assigned the type
+             ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        <encoder>
+            <pattern>%X{user_id} >>> ${project_name} >> %d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="debug">
+        <appender-ref ref="STDOUT" />
     </root>
 </configuration>

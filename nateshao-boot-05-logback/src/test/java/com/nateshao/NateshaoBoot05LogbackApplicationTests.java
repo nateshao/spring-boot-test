@@ -14,7 +14,7 @@ class NateshaoBoot05LogbackApplicationTests {
     void contextLoads() {
         MDC.put("user_id","1000");
 
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 10; i++) {
             log.info("info 级别日志文件输出");
         }
     }
