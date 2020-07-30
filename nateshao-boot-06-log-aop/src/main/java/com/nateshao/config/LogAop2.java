@@ -41,7 +41,8 @@ public class LogAop2 {
 
         Object result = proceedingJoinPoint.proceed();
 
-//        log.info("处理结果为:",result);
+        log.info("处理结果为:",result);
+
         return result;
     }
 
