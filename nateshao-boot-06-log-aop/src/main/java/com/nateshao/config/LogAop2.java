@@ -18,13 +18,15 @@ import javax.servlet.http.HttpServletRequest;
  * @GitHub https://github.com/nateshao
  */
 @Slf4j
+
 @Aspect
-public class LogAop {
+@Component
+public class LogAop2 {
     @Autowired
     private HttpServletRequest request;
 
-    @Around("execution(public * com.nateshao.controller.*Controller.*(..))")
-    public Object around(JoinPoint point) throws Throwable {
+    @Around("@annotation(demolog)")
+    public Object around(JoinPoint point,DemoLog demolog) throws Throwable {
 
         log.info("请求参数为:{}",point.getArgs());
 
@@ -32,6 +34,8 @@ public class LogAop {
 
         String header = request.getHeader("User-Agent");
         log.info("请求浏览器{}:",header);
+
+        log.info("请求方法名称:",demolog.value());
 
         ProceedingJoinPoint proceedingJoinPoint = (ProceedingJoinPoint) point;
 
