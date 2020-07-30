@@ -16,8 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoController {
     @GetMapping
     public R demo(){
-
-
         return new R(1,null,"Hello Springboot");
     }
 
