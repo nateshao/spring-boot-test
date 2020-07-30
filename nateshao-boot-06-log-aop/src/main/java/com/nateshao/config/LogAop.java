@@ -5,7 +5,10 @@ import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * @date Created by 邵桐杰 on 2020/7/30 0:18
@@ -18,6 +21,8 @@ import org.springframework.stereotype.Component;
 @Component
 @Aspect
 public class LogAop {
+    @Autowired
+    private HttpServletRequest request;
 
     @Around("execution(public * com.nateshao.controller.*Controller.*(..))")
     public Object around(JoinPoint point) throws Throwable {
@@ -26,9 +31,14 @@ public class LogAop {
 
         log.info("请求方法为:{}",point.getSignature().getName());
 
+        String header = request.getHeader("User-Agent");
+        log.info("请求浏览器{}:",header);
+
         ProceedingJoinPoint proceedingJoinPoint = (ProceedingJoinPoint) point;
 
         Object result = proceedingJoinPoint.proceed();
+
+//        log.info("处理结果为:",result);
         return result;
     }
 

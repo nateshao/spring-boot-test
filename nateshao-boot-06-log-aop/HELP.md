@@ -76,22 +76,111 @@
 </project>
 ```
 
+![1](https://nateshao-blog.oss-cn-shenzhen.aliyuncs.com/img/1.png)
+
+
+
 ## AopLog.java
 
 ```java
-/**
- * <p>
- * 使用 aop 切面记录请求日志信息
- * </p>
- *
- * @package: com.xkcoding.log.aop.aspectj
- * @description: 使用 aop 切面记录请求日志信息
- * @author: yangkai.shen
- * @date: Created in 2018/10/1 10:05 PM
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+package com.nateshao.config;
+
+import lombok.extern.slf4j.Slf4j;
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import javax.servlet.http.HttpServletRequest;
+
+/**使用 aop 切面记录请求日志信息
+ * @date Created by 邵桐杰 on 2020/7/30 0:18
+ * @微信公众号 千羽的编程时光
+ * @个人网站 www.nateshao.cn
+ * @博客 https://nateshao.gitee.io
+ * @GitHub https://github.com/nateshao
  */
+@Slf4j
+@Component
+@Aspect
+public class LogAop {
+    @Autowired
+    private HttpServletRequest httpServletRequest;
+
+    @Around("execution(public * com.nateshao.controller.*Controller.*(..))")
+    public Object around(JoinPoint point) throws Throwable {
+
+//        log.info("请求参数为:" ,httpServletRequest);
+
+
+        log.info("请求参数为:{}",point.getArgs());
+
+        log.info("请求方法为:{}",point.getSignature().getName());
+
+        ProceedingJoinPoint proceedingJoinPoint = (ProceedingJoinPoint) point;
+
+        Object result = proceedingJoinPoint.proceed();
+
+//        log.info("处理结果为:",result);
+        return result;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @Aspect
 @Component
 @Slf4j
@@ -159,6 +248,64 @@ public class AopLog {
 	}
 }
 ```
+
+![运行结果](https://nateshao-blog.oss-cn-shenzhen.aliyuncs.com/img/2.png)
+
+
+
+
+
+```java
+package com.nateshao.config;
+
+import lombok.extern.slf4j.Slf4j;
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import javax.servlet.http.HttpServletRequest;
+
+/**
+ * @date Created by 邵桐杰 on 2020/7/30 0:18
+ * @微信公众号 千羽的编程时光
+ * @个人网站 www.nateshao.cn
+ * @博客 https://nateshao.gitee.io
+ * @GitHub https://github.com/nateshao
+ */
+@Slf4j
+@Component
+@Aspect
+public class LogAop {
+    @Autowired
+    private HttpServletRequest request;
+
+    @Around("execution(public * com.nateshao.controller.*Controller.*(..))")
+    public Object around(JoinPoint point) throws Throwable {
+
+        log.info("请求参数为:{}",point.getArgs());
+
+        log.info("请求方法为:{}",point.getSignature().getName());
+
+        String header = request.getHeader("User-Agent");
+        log.info("请求浏览器{}:",header);
+
+        ProceedingJoinPoint proceedingJoinPoint = (ProceedingJoinPoint) point;
+
+        Object result = proceedingJoinPoint.proceed();
+
+//        log.info("处理结果为:",result);
+        return result;
+    }
+
+}
+```
+
+![3](https://nateshao-blog.oss-cn-shenzhen.aliyuncs.com/img/3.png)
+
+
 
 ## TestController.java
 
