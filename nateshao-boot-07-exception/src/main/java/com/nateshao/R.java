@@ -15,9 +15,11 @@ import lombok.Data;
 @AllArgsConstructor
 public class R {
 
+
     private Integer code;
     private String msg;
     private Object data;
+
 
     public static R success(Object data){
         return new R(1,null,data);
