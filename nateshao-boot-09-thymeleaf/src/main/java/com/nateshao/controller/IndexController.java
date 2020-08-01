@@ -1,5 +1,6 @@
 package com.nateshao.controller;
 
+import cn.hutool.core.util.ObjectUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.catalina.User;
 import org.springframework.stereotype.Controller;
@@ -7,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+
 
 /**
  * @date Created by 邵桐杰 on 2020/8/1 23:59
@@ -19,6 +21,8 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 @Slf4j
 public class IndexController {
+
+
 
     @GetMapping(value = {"", "/"})
     public ModelAndView index(HttpServletRequest request) {

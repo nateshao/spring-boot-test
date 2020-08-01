@@ -44,6 +44,12 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <!-- https://www.KuMaPai.com/open/cn.hutool/hutool-all -->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>4.1.12</version>
+        </dependency>
     </dependencies>
 
     <build>
