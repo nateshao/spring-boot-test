@@ -213,7 +213,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Slf4j
 @ControllerAdvice
 public class GlobaleExceptionHander {
-
     @ResponseBody
     @ExceptionHandler(Exception.class)
     public R execpetion(Exception e){
