@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoController {
     @DemoLog("测试拦截")
     @GetMapping("/")
-    public String demo(String username){
-        return "hello " +  username;
+    public String demo(String username) {
+        return "hello " + username;
     }
 
 }

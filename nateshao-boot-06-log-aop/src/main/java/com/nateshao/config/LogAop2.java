@@ -26,22 +26,22 @@ public class LogAop2 {
     private HttpServletRequest request;
 
     @Around("@annotation(demolog)")
-    public Object around(JoinPoint point,DemoLog demolog) throws Throwable {
+    public Object around(JoinPoint point, DemoLog demolog) throws Throwable {
 
-        log.info("请求参数为:{}",point.getArgs());
+        log.info("请求参数为:{}", point.getArgs());
 
-        log.info("请求方法为:{}",point.getSignature().getName());
+        log.info("请求方法为:{}", point.getSignature().getName());
 
         String header = request.getHeader("User-Agent");
-        log.info("请求浏览器{}:",header);
+        log.info("请求浏览器{}:", header);
 
-        log.info("请求方法名称:",demolog.value());
+        log.info("请求方法名称:", demolog.value());
 
         ProceedingJoinPoint proceedingJoinPoint = (ProceedingJoinPoint) point;
 
         Object result = proceedingJoinPoint.proceed();
 
-        log.info("处理结果为:",result);
+        log.info("处理结果为:", result);
 
         return result;
     }

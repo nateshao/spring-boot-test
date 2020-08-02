@@ -26,12 +26,12 @@ public class LogAop {
     @Around("execution(public * com.nateshao.controller.*Controller.*(..))")
     public Object around(JoinPoint point) throws Throwable {
 
-        log.info("请求参数为:{}",point.getArgs());
+        log.info("请求参数为:{}", point.getArgs());
 
-        log.info("请求方法为:{}",point.getSignature().getName());
+        log.info("请求方法为:{}", point.getSignature().getName());
 
         String header = request.getHeader("User-Agent");
-        log.info("请求浏览器{}:",header);
+        log.info("请求浏览器{}:", header);
 
         ProceedingJoinPoint proceedingJoinPoint = (ProceedingJoinPoint) point;
 

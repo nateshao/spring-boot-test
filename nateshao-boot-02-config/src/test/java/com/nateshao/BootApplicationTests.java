@@ -27,7 +27,7 @@ class BootApplicationTests {
     }
 
     @Test
-    void testDemoConfig(){
+    void testDemoConfig() {
         System.out.println(demoConfig);
     }
 }

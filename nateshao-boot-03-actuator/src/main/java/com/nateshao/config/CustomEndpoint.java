@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 public class CustomEndpoint {
 
     @ReadOperation
-    public String custome(){
+    public String custome() {
         return "hello nateshao!!";
     }
 }

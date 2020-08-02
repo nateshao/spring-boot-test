@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DemoController {
     @GetMapping
-    public R demo(Integer num){
+    public R demo(Integer num) {
 
-        if (1 == num ){
+        if (1 == num) {
             throw new RuntimeException("测试异常");
         }
         return R.success("hello spring boot");

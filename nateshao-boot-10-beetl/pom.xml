@@ -5,14 +5,14 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.3.1.RELEASE</version>
+        <version>2.3.2.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.nateshao</groupId>
-    <artifactId>nateshao-boot-actuator</artifactId>
+    <artifactId>nateshao-boot-10-beetl</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>nateshao-boot-actuator</name>
-    <description>nateshao-boot-actuator</description>
+    <name>nateshao-boot-10-beetl</name>
+    <description>Demo project for Spring Boot nateshao-boot-10-beetl</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -21,31 +21,20 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <!--		<dependency>-->
-        <!--			<groupId>org.springframework.cloud</groupId>-->
-        <!--			<artifactId>spring-cloud-starter-config</artifactId>-->
-        <!--		</dependency>-->
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-test</artifactId>
-            <scope>test</scope>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>

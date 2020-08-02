@@ -21,15 +21,13 @@ public class R {
     private Object data;
 
 
-    public static R success(Object data){
-        return new R(1,null,data);
+    public static R success(Object data) {
+        return new R(1, null, data);
     }
 
-    public static R fail(String msg,Object data){
-        return new R(-1,msg,data);
+    public static R fail(String msg, Object data) {
+        return new R(-1, msg, data);
     }
-
-
 
 
 }

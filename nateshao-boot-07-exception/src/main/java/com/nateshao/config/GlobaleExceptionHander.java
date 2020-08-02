@@ -20,7 +20,7 @@ public class GlobaleExceptionHander {
 
     @ResponseBody
     @ExceptionHandler(Exception.class)
-    public R execpetion(Exception e){
-        return R.fail(e.getLocalizedMessage(),null);
+    public R execpetion(Exception e) {
+        return R.fail(e.getLocalizedMessage(), null);
     }
 }
