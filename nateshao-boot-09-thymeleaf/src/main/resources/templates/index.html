@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--组件化-->
+     <div th:include="header.html::header"></div>
+
+    yyy
+    <div th:text="${k1}"></div>
+    <div th:text="${user.username}"></div>
+
+
+    <div th:each="user:${userList}">
+        <span th:text="#{Sysuser.username}"></span>
+        <span th:text="${userStat.index}"></span>
+    </div>
+
+    <div th:text="${#dates.format(date,'yyyyMMdd')}">themeleaf日期</div>
+</body>
+</html>
