@@ -1,0 +1,11 @@
+<% include("header.btl",{'username':'nateshao'}){}%>
+
+${username}
+
+
+<% for(user in userList) {%>
+${user.username}
+<%}%>
+
+
+${date,'yyyyMMdd'}

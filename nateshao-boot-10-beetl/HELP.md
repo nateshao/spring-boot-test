@@ -1,4 +1,4 @@
-# spring-boot-demo-template-beetl
+# nateshao-boot-10-beetl
 
 > 本 demo 主要演示了 Spring Boot 项目如何集成 beetl 模板引擎
 
