@@ -17,4 +17,6 @@ import java.util.List;
 @Mapper
 public interface SysUserMapper {
     List<SysUser> selectAll();
+
+    Integer saveSysUser(@Param("user") SysUser user);
 }
