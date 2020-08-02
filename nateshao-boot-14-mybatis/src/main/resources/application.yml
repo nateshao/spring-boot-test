@@ -10,13 +10,14 @@ spring:
 mybatis:
   # 指定 mapper xml 的文件地址
   mapper-locations: classpath:mapper/**.xml
-#  configuration:
-#    map-underscore-to-camel-case: true
+  configuration:
+    # 驼峰配置
+    map-underscore-to-camel-case: true
 
-#logging:
-#  level:
-#    com:
-#      pig4cloud:
-#        spring:
-#          springbootdemo15:
-#            mapper: debug
+    # 打印日志
+logging:
+  level:
+    com:
+      nateshao:
+        nateshaoboot14mybatis:
+          mapper: debug

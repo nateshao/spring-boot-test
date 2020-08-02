@@ -13,7 +13,7 @@ import lombok.Data;
 @Data
 public class SysUser {
 
-    private Integer userId;
+    private Integer Id;
 
     private String username;
 
