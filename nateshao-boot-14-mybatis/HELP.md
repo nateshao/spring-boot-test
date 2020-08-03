@@ -1,8 +1,16 @@
+
+
 # nateshao-boot-14-mybatis
 
 > 此 demo 演示了 Spring Boot 如何与原生的 mybatis 整合，使用了 mybatis 官方提供的脚手架 `mybatis-spring-boot-starter `可以很容易的和 Spring Boot 整合。
 
 - 采用`EasyCode`进行代码自动生成。
+
+  ![插件下载](https://nateshao-blog.oss-cn-shenzhen.aliyuncs.com/img/插件.png)
+
+  ![连接数据库](https://nateshao-blog.oss-cn-shenzhen.aliyuncs.com/img/连接数据库.png)
+
+  ![自动生成](https://nateshao-blog.oss-cn-shenzhen.aliyuncs.com/img/自动生成.png)
 
 ## pom.xml
 
@@ -259,6 +267,8 @@ public interface UserService {
       
       </mapper>
 ```
+## UserServiceImpl.java
+
 ```java
 package com.nateshao.nateshaoboot14mybatis.service.impl;
 
@@ -340,6 +350,8 @@ public class UserServiceImpl implements UserService {
     }
 }
 ```
+
+## User.java
 
 ```java
 package com.nateshao.nateshaoboot14mybatis.entity;
