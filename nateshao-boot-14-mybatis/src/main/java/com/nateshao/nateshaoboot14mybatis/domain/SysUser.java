@@ -11,7 +11,7 @@ import lombok.Data;
  * @Gitee https://gitee.com/nateshao
  */
 @Data
-public class SysUser extends com.nateshao.nateshaoboot14mybatis.entity.SysUser {
+public class SysUser  {
 
     private Integer Id;
 
