@@ -1,0 +1,3 @@
+
+beetlsql:
+  basePackage: com.nateshao.nateshaoboot17beetlsql.dao
