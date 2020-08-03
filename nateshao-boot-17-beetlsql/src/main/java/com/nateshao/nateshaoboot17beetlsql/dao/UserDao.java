@@ -4,6 +4,8 @@ import com.nateshao.nateshaoboot17beetlsql.domain.User;
 import org.beetl.sql.core.mapper.BaseMapper;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 /**
  * @date Created by 邵桐杰 on 2020/8/3 23:59
  * @微信公众号 千羽的编程时光
@@ -14,4 +16,6 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public interface UserDao extends BaseMapper<User> {
+
+    List<User> selectByUsername(String username);
 }
