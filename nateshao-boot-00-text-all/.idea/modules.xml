@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/nateshao-boot-00-text-all.iml" filepath="$PROJECT_DIR$/.idea/nateshao-boot-00-text-all.iml" />
       <module fileurl="file://$PROJECT_DIR$/nateshao-boot-chapter01/nateshao-boot-chapter01.iml" filepath="$PROJECT_DIR$/nateshao-boot-chapter01/nateshao-boot-chapter01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nateshao-boot-chapter02/nateshao-boot-chapter02.iml" filepath="$PROJECT_DIR$/nateshao-boot-chapter02/nateshao-boot-chapter02.iml" />
     </modules>
   </component>
 </project>
