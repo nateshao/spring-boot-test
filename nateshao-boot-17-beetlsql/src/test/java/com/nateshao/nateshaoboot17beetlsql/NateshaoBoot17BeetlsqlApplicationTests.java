@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.jws.soap.SOAPBinding;
+import java.util.List;
 
 @SpringBootTest
 class NateshaoBoot17BeetlsqlApplicationTests {
@@ -23,6 +24,11 @@ class NateshaoBoot17BeetlsqlApplicationTests {
         user.setUsername("aaaaaaaaa");
         user.setPassword("qqqqqq");
         userDao.insert(user);
+    }
+    @Test
+    void query() {
+        List<User> nateshao = userDao.selectByUsername("nateshao");
+        System.out.println(nateshao);
     }
 
 
