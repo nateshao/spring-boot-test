@@ -3,9 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/nateshao-boot-00-text-all.iml" filepath="$PROJECT_DIR$/.idea/nateshao-boot-00-text-all.iml" />
-      <module fileurl="file://$PROJECT_DIR$/nateshao-boot-chapter01/nateshao-boot-chapter01.iml" filepath="$PROJECT_DIR$/nateshao-boot-chapter01/nateshao-boot-chapter01.iml" />
-      <module fileurl="file://$PROJECT_DIR$/nateshao-boot-chapter02/nateshao-boot-chapter02.iml" filepath="$PROJECT_DIR$/nateshao-boot-chapter02/nateshao-boot-chapter02.iml" />
-      <module fileurl="file://$PROJECT_DIR$/nateshao-boot-chapter03/nateshao-boot-chapter03.iml" filepath="$PROJECT_DIR$/nateshao-boot-chapter03/nateshao-boot-chapter03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nateshao-boot-chapter01-demo/nateshao-boot-chapter01.iml" filepath="$PROJECT_DIR$/nateshao-boot-chapter01-demo/nateshao-boot-chapter01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nateshao-boot-chapter02-config/nateshao-boot-chapter02.iml" filepath="$PROJECT_DIR$/nateshao-boot-chapter02-config/nateshao-boot-chapter02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nateshao-boot-chapter03-jpa/nateshao-boot-chapter03.iml" filepath="$PROJECT_DIR$/nateshao-boot-chapter03-jpa/nateshao-boot-chapter03.iml" />
     </modules>
   </component>
 </project>
