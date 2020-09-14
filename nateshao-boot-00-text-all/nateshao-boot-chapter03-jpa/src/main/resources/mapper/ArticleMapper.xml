@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.nateshao.mapper.ArticleMapper" >
+    <!-- 1、查询文章详细（包括评论信息） -->
+    <select id="selectArticle" resultMap="articleWithComment">
+       SELECT a.*,c.id c_id,c.content c_content,c.author
+       FROM t_article a,t_comment c
+       WHERE a.id=c.a_id AND a.id = #{id}
+    </select>
+    <resultMap id="articleWithComment" type="Article">
+        <id property="id" column="id" />
+        <result property="title" column="title" />
+        <result property="content" column="content" />
+        <collection property="commentList" ofType="Comment">
+            <id property="id" column="c_id" />
+            <result property="content" column="c_content" />
+            <result property="author" column="author" />
+        </collection>
+    </resultMap>
+</mapper>
