@@ -21,7 +21,6 @@ public class LoginController {
     public String toLoginPage(Model model){
         model.addAttribute("currentYear", Calendar.getInstance().get(Calendar.YEAR));
         return "login";
-
     }
 
 }
