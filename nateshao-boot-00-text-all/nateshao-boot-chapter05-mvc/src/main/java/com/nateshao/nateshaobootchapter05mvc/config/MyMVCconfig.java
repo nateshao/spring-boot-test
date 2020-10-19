@@ -1,5 +1,6 @@
 package com.nateshao.nateshaobootchapter05mvc.config;
 
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -11,12 +12,12 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  * @GitHub https://github.com/nateshao
  * @Gitee https://gitee.com/nateshao
  */
+@Configuration
 public class MyMVCconfig implements WebMvcConfigurer {
     // 添加视图管理
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("toLoginPage").setViewName("login");
         registry.addViewController("login.html").setViewName("login");
-
     }
 }
