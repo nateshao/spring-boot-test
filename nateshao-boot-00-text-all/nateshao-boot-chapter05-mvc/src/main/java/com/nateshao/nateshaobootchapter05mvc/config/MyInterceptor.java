@@ -30,7 +30,8 @@ public class MyInterceptor implements HandlerInterceptor {
 
         if (uri.startsWith("/admin")&&loginUser == null){
             response.sendRedirect("/toLoginPage");
-            return false; }
+            return false;
+        }
         return true;
     }
 
