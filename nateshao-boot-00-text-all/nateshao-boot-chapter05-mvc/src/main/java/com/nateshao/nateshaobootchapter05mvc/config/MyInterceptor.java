@@ -6,6 +6,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Calendar;
 
 /**
  * @date Created by 邵桐杰 on 2020/10/19 20:16
@@ -29,13 +30,13 @@ public class MyInterceptor implements HandlerInterceptor {
 
         if (uri.startsWith("/admin")&&loginUser == null){
             response.sendRedirect("/toLoginPage");
-            return false;
-        }
+            return false; }
         return true;
     }
 
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
+        request.setAttribute("currentYear", Calendar.getInstance().get(Calendar.YEAR));
 
     }
 
