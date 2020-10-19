@@ -17,8 +17,8 @@ import java.io.IOException;
  * @GitHub https://github.com/nateshao
  * @Gitee https://gitee.com/nateshao
  */
-@WebServlet("/annotationServlet")
 //@Component
+@WebServlet("/annotationServlet")
 public class MyServlet extends HttpServlet {
 
     @Override

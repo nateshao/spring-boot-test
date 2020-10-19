@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebFilter;
 import java.io.IOException;
 
 /**
+ * @author 邵桐杰
  * @date Created by 邵桐杰 on 2020/10/19 21:45
  * @微信公众号 千羽的编程时光
  * @个人网站 www.nateshao.cn
@@ -16,7 +17,7 @@ import java.io.IOException;
  * @Gitee https://gitee.com/nateshao
  */
 //@Component
-@WebFilter(value = {"antionLogin","antionFilter"})
+@WebFilter(value = {"/antionLogin","/antionMyFilter"})
 public class MyFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
