@@ -1,6 +1,8 @@
 package com.nateshao.config;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.util.StringUtils;
 import org.springframework.web.servlet.LocaleResolver;
 
 import javax.servlet.http.HttpServletRequest;
@@ -23,14 +25,44 @@ public class MyLocalResovel implements LocaleResolver {
         String l = httpServletRequest.getParameter("1");
         String header = httpServletRequest.getHeader("Accept-Language");
 
+        Locale locale = null;
+        if (!StringUtils.isEmpty(1)){
+            String[] split = l.split("_");
+            locale = new Locale(split[0],split[1]);
+        }else {
+            String[] splits = header.split(",");
+            String[] split = splits[0].split("-");
+            locale = new Locale(split[0],split[1]);
+        }
 
-
-
-        return null;
+        return locale;
     }
 
     @Override
     public void setLocale(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Locale locale) {
 
     }
+
+    @Bean
+    public LocaleResolver localeResolver(){
+        return new MyLocalResovel();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
