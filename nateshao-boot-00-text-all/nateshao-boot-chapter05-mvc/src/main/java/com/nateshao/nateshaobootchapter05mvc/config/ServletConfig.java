@@ -1,12 +1,15 @@
 package com.nateshao.nateshaobootchapter05mvc.config;
 
 import com.nateshao.nateshaobootchapter05mvc.servletComponent.MyFilter;
+import com.nateshao.nateshaobootchapter05mvc.servletComponent.MyListener;
 import com.nateshao.nateshaobootchapter05mvc.servletComponent.MyServlet;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
+import org.springframework.boot.web.servlet.ServletListenerRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import javax.servlet.ServletContextListener;
 import java.util.Arrays;
 
 /**
@@ -35,7 +38,14 @@ public class ServletConfig {
         return registrationBean;
     }
 
+    // 注册Listener组件
+    @Bean
+    public ServletListenerRegistrationBean getServletListener(MyListener myListener){
 
+        ServletListenerRegistrationBean registrationBean = new ServletListenerRegistrationBean(myListener);
+
+        return registrationBean;
+    }
 
 
 
