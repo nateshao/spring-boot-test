@@ -4,6 +4,7 @@ import org.springframework.stereotype.Component;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
+import javax.servlet.annotation.WebListener;
 
 /**
  * @date Created by 邵桐杰 on 2020/10/19 21:53
@@ -13,17 +14,34 @@ import javax.servlet.ServletContextListener;
  * @GitHub https://github.com/nateshao
  * @Gitee https://gitee.com/nateshao
  */
-@Component
-public class MyListener implements ServletContextListener {
+//@Component
+//public class MyListener implements ServletContextListener {
+//
+//
+//    @Override
+//    public void contextInitialized(ServletContextEvent sce) {
+//        System.out.println("context initialized！！！！！！！！！！！！！！！！！！！！！！！！");
+//    }
+//
+//    @Override
+//    public void contextDestroyed(ServletContextEvent sce) {
+//        System.out.println("context destoryed..。。。。。。。。。。。。。。。。。。。。。。");
+//    }
+//}
 
+@WebListener
+public class MyListener implements ServletContextListener {
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
-        System.out.println("context initialized");
+        System.out.println("context initialized！！！！！！！！！！！！！！！！！！！！！！！！");
     }
 
     @Override
     public void contextDestroyed(ServletContextEvent sce) {
-        System.out.println("context destoryed..");
+        System.out.println("context destoryed..。。。。。。。。。。。。。。。。。。。。。。");
     }
 }
+
+
+

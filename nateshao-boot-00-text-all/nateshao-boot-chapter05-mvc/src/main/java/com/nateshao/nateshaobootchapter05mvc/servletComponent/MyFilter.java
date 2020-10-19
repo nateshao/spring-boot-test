@@ -4,6 +4,7 @@ package com.nateshao.nateshaobootchapter05mvc.servletComponent;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.*;
+import javax.servlet.annotation.WebFilter;
 import java.io.IOException;
 
 /**
@@ -14,7 +15,8 @@ import java.io.IOException;
  * @GitHub https://github.com/nateshao
  * @Gitee https://gitee.com/nateshao
  */
-@Component
+//@Component
+@WebFilter(value = {"antionLogin","antionFilter"})
 public class MyFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {

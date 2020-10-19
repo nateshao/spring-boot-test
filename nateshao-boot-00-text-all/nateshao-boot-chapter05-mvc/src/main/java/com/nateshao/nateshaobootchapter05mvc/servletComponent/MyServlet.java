@@ -3,6 +3,7 @@ package com.nateshao.nateshaobootchapter05mvc.servletComponent;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,7 +17,8 @@ import java.io.IOException;
  * @GitHub https://github.com/nateshao
  * @Gitee https://gitee.com/nateshao
  */
-@Component
+@WebServlet("/annotationServlet")
+//@Component
 public class MyServlet extends HttpServlet {
 
     @Override
