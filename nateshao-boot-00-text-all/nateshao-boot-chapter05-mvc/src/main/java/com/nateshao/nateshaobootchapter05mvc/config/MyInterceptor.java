@@ -27,11 +27,11 @@ public class MyInterceptor implements HandlerInterceptor {
         String uri = request.getRequestURI();
         Object loginUser = request.getSession().getAttribute("loginUser");
 
-        if (uri.startsWith("/admin")&&loginUser ==null){
-
+        if (uri.startsWith("/admin")&&loginUser == null){
+            response.sendRedirect("/toLoginPage");
+            return false;
         }
-
-        return false;
+        return true;
     }
 
     @Override
