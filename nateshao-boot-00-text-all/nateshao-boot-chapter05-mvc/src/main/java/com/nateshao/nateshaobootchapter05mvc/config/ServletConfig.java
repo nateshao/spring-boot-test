@@ -1,9 +1,13 @@
 package com.nateshao.nateshaobootchapter05mvc.config;
 
+import com.nateshao.nateshaobootchapter05mvc.servletComponent.MyFilter;
 import com.nateshao.nateshaobootchapter05mvc.servletComponent.MyServlet;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import java.util.Arrays;
 
 /**
  * @date Created by 邵桐杰 on 2020/10/19 20:16
@@ -24,6 +28,12 @@ public class ServletConfig {
         return registrationBean;
     }
 
+    @Bean
+    public FilterRegistrationBean getFilter(MyFilter myFilter){
+        FilterRegistrationBean registrationBean = new FilterRegistrationBean(myFilter);
+        registrationBean.setUrlPatterns(Arrays.asList("/toLoginPage","/myFilter"));
+        return registrationBean;
+    }
 
 
 
