@@ -20,6 +20,12 @@ public class MyLocalResovel implements LocaleResolver {
 
     @Override
     public Locale resolveLocale(HttpServletRequest httpServletRequest) {
+        String l = httpServletRequest.getParameter("1");
+        String header = httpServletRequest.getHeader("Accept-Language");
+
+
+
+
         return null;
     }
 
