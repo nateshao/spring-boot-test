@@ -12,6 +12,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  * @Gitee https://gitee.com/nateshao
  */
 public class MyMVCconfig implements WebMvcConfigurer {
+    // 添加视图管理
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("toLoginPage").setViewName("login");
