@@ -36,14 +36,10 @@ public class FileController {
     // 文件上传管理
     @PostMapping("/uploadFile")
     public String uploadFile(MultipartFile[] fileUpload, Model model) {
-        // 默认文件上传成功，并返回状态信息
         model.addAttribute("uploadStatus", "上传成功！");
         for (MultipartFile file : fileUpload) {
-            // 获取文件名以及后缀名
             String fileName = file.getOriginalFilename();
-            // 重新生成文件名（根据具体情况生成对应文件名）
             fileName = UUID.randomUUID()+"_"+fileName;
-            // 指定上传文件本地存储目录，不存在需要提前创建
             String dirPath = "F:/file/";
             File filePath = new File(dirPath);
             if(!filePath.exists()){
@@ -53,15 +49,12 @@ public class FileController {
                 file.transferTo(new File(dirPath+fileName));
             } catch (Exception e) {
                 e.printStackTrace();
-                // 上传失败，返回失败信息
                 model.addAttribute("uploadStatus","上传失败： "+e.getMessage());
             }
         }
-        // 携带上传状态信息回调到文件上传页面
         return "upload";
     }
 
-    // 向文件下载页面跳转
     @GetMapping("/toDownload")
     public String toDownload(){
         return "download";
