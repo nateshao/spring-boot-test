@@ -1,9 +1,6 @@
 package com.nateshao.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * @date Created by 邵桐杰 on 2020/10/27 11:06
@@ -20,6 +17,7 @@ public class Comment {
     private Integer id;
     private String content;
     private String author;
+    @Column(name = "a_id")
     private Integer aId;
 
     public Integer getId() {
