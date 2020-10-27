@@ -16,8 +16,8 @@ import org.springframework.transaction.annotation.Transactional;
  */
 public interface CommentRepository extends JpaRepository<Comment,Integer> {
 
-//    @Transactional
-//    @Modifying
+    @Transactional
+    @Modifying
     @Query("UPDATE t_comment c set c.author = ? 1 where c.id = ?2")
     public int updateComment(String author,Integer id);
 
