@@ -1,6 +1,7 @@
 package com.nateshao.domain;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * @date Created by 邵桐杰 on 2020/10/27 11:06
@@ -11,7 +12,7 @@ import javax.persistence.*;
  * @Gitee https://gitee.com/nateshao
  */
 @Entity(name = "t_comment")
-public class Comment {
+public class Comment implements Serializable     {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
