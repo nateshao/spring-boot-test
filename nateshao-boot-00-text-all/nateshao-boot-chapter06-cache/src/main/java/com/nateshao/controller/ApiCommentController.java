@@ -26,4 +26,13 @@ public class ApiCommentController {
         Comment comment = apiCommentService.findById(comment_id);
         return comment;
     }
+
+
+    @GetMapping("/update/{id}")
+    public Comment updateComment(@PathVariable("id") int comment_id,@PathVariable("author") String author){
+        Comment comment = apiCommentService.findById(comment_id);
+        comment.setAuthor(author);
+        Comment updateComment = apiCommentService.updateComment(comment);
+        return updateComment;
+    }
 }
