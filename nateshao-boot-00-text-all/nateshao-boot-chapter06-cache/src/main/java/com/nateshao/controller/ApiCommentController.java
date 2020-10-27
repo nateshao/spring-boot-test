@@ -35,4 +35,9 @@ public class ApiCommentController {
         Comment updateComment = apiCommentService.updateComment(comment);
         return updateComment;
     }
+
+    @GetMapping("/delete/{id}")
+    public void dateleteComment(@PathVariable("id") int comment_id){
+        apiCommentService.deleteComment(comment_id);
+    }
 }
