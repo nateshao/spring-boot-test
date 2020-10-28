@@ -75,7 +75,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .usersByUsernameQuery(userSQL)
                 .authoritiesByUsernameQuery(authoritySQL);
 
-
         auth.userDetailsService(userDetailsService).passwordEncoder(encoder);
     }
 
