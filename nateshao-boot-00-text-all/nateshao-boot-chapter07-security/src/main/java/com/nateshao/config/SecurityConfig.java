@@ -26,7 +26,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .withUser("李四").password(encoder.encode("123456")).roles("vip");
 
 
-        super.configure(auth);
+//        super.configure(auth);
     }
 }
 
