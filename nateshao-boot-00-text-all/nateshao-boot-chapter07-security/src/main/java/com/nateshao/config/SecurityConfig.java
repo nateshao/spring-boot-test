@@ -82,7 +82,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //    }
 
 
-
     /******************* 用户授权管理自定义配置 ***********************/
 
 
@@ -120,13 +119,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //        http.csrf().disable();
 
     }
+
     /**
      * 持久化Token存储
+     *
      * @return
      */
     @Bean
-    public JdbcTokenRepositoryImpl tokenRepository(){
-        JdbcTokenRepositoryImpl jr=new JdbcTokenRepositoryImpl();
+    public JdbcTokenRepositoryImpl tokenRepository() {
+        JdbcTokenRepositoryImpl jr = new JdbcTokenRepositoryImpl();
         jr.setDataSource(dataSource);
         return jr;
     }
