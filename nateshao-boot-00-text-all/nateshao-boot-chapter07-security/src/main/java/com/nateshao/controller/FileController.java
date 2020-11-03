@@ -12,14 +12,23 @@ import org.springframework.web.bind.annotation.PathVariable;
  * @GitHub https://github.com/nateshao
  * @Gitee https://gitee.com/nateshao
  */
-//@Controller
-//public class FileController {
+@Controller
+public class FileController {
 //    @GetMapping("/detail/{type}/{path}")
 //    public String toDetail(@PathVariable("type")String type,@PathVariable("Path") String path){
 //
 //        return "detail/"+type+"/"+path;
 //    }
-//}
+
+
+
+    @GetMapping("/userLogin")
+    public String toLoginPage(){
+        return "login/login";
+    }
+}
+
+
 
 
 
