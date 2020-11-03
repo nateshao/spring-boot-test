@@ -111,14 +111,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .logoutSuccessUrl("/");
 
         // 定制Remember-me记住我功能
-//        http.rememberMe()
-//                .rememberMeParameter("rememberme")
-//                .tokenValiditySeconds(200)
-//                // 对cookie信息进行持久化管理
-//                .tokenRepository(tokenRepository());
+        http.rememberMe()
+                .rememberMeParameter("rememberme")
+                .tokenValiditySeconds(200)
+                // 对cookie信息进行持久化管理
+                .tokenRepository(tokenRepository());
 
         // 可以关闭Spring Security默认开启的CSRF防护功能
-//        http.csrf().disable();
+        http.csrf().disable();
 
     }
 
@@ -127,12 +127,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
      *
      * @return
      */
-//    @Bean
-//    public JdbcTokenRepositoryImpl tokenRepository() {
-//        JdbcTokenRepositoryImpl jr = new JdbcTokenRepositoryImpl();
-//        jr.setDataSource(dataSource);
-//        return jr;
-//    }
+    @Bean
+    public JdbcTokenRepositoryImpl tokenRepository() {
+        JdbcTokenRepositoryImpl jr = new JdbcTokenRepositoryImpl();
+        jr.setDataSource(dataSource);
+        return jr;
+    }
 
 
 }
