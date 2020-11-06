@@ -34,7 +34,7 @@ public class SendEmailServiceTest {
 
     @Test
     public void sendComplexEmailTest() {
-        String to="2127269781@qq.com";
+        String to="1210331079@qq.com";
         String subject="【复杂邮件】标题";
         // 定义邮件内容
         StringBuilder text = new StringBuilder();
@@ -54,7 +54,7 @@ public class SendEmailServiceTest {
 
     @Test
     public void sendTemplateEmailTest() {
-        String to="2127269781@qq.com";
+        String to="1210331079@qq.com";
         String subject="【模板邮件】标题";
         // 使用模板邮件定制邮件正文内容
         Context context = new Context();
