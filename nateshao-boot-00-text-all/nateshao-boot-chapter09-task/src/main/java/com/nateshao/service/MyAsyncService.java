@@ -1,7 +1,10 @@
 package com.nateshao.service;
 
 import org.springframework.scheduling.annotation.Async;
+import org.springframework.scheduling.annotation.AsyncResult;
 import org.springframework.stereotype.Service;
+
+import java.util.concurrent.Future;
 
 /**
  * @date Created by 邵桐杰 on 2020/11/6 9:27
@@ -22,6 +25,32 @@ public class MyAsyncService {
         long endTime = System.currentTimeMillis();
         System.out.println("短信业务执行完成耗时：" + (endTime - startTime));
     }
+    @Async
+    public Future<Integer> processA() throws Exception {
+        System.out.println("开始分析统计A数据..");
+        long startTime = System.currentTimeMillis();
+        Thread.sleep(4000);
+        int count = 123456;
+        long endTime = System.currentTimeMillis();
+        System.out.println("业务A数据统计耗时："+(endTime-startTime));
+        return new AsyncResult<Integer>(count);
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }
