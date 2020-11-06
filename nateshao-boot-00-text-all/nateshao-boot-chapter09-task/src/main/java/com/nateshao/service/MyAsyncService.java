@@ -1,5 +1,6 @@
 package com.nateshao.service;
 
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 /**
@@ -12,5 +13,15 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class MyAsyncService {
+
+    @Async
+    public void sendSMS() throws Exception {
+        System.out.println("调用短信验证码业务方法.....");
+        long startTime = System.currentTimeMillis();
+        Thread.sleep(5000);
+        long endTime = System.currentTimeMillis();
+        System.out.println("短信业务执行完成耗时：" + (endTime - startTime));
+    }
+
 
 }
