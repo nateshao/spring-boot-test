@@ -40,7 +40,7 @@ public class MyAsyncController {
         System.out.println("异步任务数据统计汇总结果：" + total);
         long endTime = System.currentTimeMillis();
         System.out.println("主流程耗时：" + (endTime - startTime));
-
+        return "success";
     }
 
 }
