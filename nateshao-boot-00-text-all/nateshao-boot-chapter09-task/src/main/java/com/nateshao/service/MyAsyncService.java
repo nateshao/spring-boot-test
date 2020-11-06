@@ -34,7 +34,7 @@ public class MyAsyncService {
         Thread.sleep(4000);
         int count = 123456;
         long endTime = System.currentTimeMillis();
-        System.out.println("业务A数据统计耗时："+(endTime-startTime));
+        System.out.println("业务A数据统计耗时：" + (endTime - startTime));
         return new AsyncResult<Integer>(count);
 
     }
@@ -45,26 +45,11 @@ public class MyAsyncService {
         Long startTime = System.currentTimeMillis();
         Thread.sleep(5000);
         // 模拟定义一个假的统计结果
-        int count=654321;
+        int count = 654321;
         Long endTime = System.currentTimeMillis();
         System.out.println("业务B数据统计耗时：" + (endTime - startTime));
         return new AsyncResult<Integer>(count);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }
