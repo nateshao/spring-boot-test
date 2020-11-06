@@ -1,5 +1,7 @@
 package com.nateshao.controller;
 
+import com.nateshao.service.MyAsyncService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.stereotype.Controller;
 
@@ -13,5 +15,9 @@ import org.springframework.stereotype.Controller;
  */
 @Controller
 public class MyAsyncController {
+
+    @Autowired
+    private MyAsyncService myAsyncService;
+
 
 }
