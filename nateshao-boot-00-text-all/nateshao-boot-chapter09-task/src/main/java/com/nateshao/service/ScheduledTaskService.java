@@ -4,6 +4,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * @date Created by 邵桐杰 on 2020/11/6 9:57
@@ -32,8 +33,8 @@ public class ScheduledTaskService {
     }
 
     @Scheduled(cron = "0 * * * * *")
-    public void scheduledTaskCron(){
-        System.out.println(String.format("cron第%s次执行，当前时间为：%s",count3++, dateFormat.format(new Date())));
+    public void scheduledTaskCron() {
+        System.out.println(String.format("cron第%s次执行，当前时间为：%s", count3++, dateFormat.format(new Date())));
     }
 
 }
