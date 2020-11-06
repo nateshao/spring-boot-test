@@ -25,7 +25,7 @@ public class SendEmailServiceTest {
 
     @Test
     public void sendSimpleMailTest() {
-        String to="2127269781@qq.com";
+        String to="1210331079@qq.com";
         String subject="【纯文本邮件】标题";
         String text="Spring Boot纯文本邮件发送内容测试.....";
         // 发送简单邮件
