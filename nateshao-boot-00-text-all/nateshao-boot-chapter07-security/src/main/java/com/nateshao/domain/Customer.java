@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.io.Serializable;
 
 /**
  * @date Created by 邵桐杰 on 2020/10/28 22:37
@@ -14,7 +15,7 @@ import javax.persistence.Id;
  * @Gitee https://gitee.com/nateshao
  */
 @Entity(name = "t_customer")
-public class Customer {
+public class Customer implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
