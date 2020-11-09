@@ -28,18 +28,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private UserDetailsServiceImpl userDetailsService;
     /******************* 自定义用户认证 ***********************/
-//    @Override
-//    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-//
-//        auth.inMemoryAuthentication().passwordEncoder(encoder)
-//                .withUser("shitou").password(encoder.encode("123456")).roles("common")
-//                .and()
-//                .withUser("李四").password(encoder.encode("123456")).roles("vip");
-//
-//
-////        super.configure(auth);
-//    }
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        auth.inMemoryAuthentication().passwordEncoder(encoder)
+                .withUser("shitou").password(encoder.encode("123456")).roles("common")
+                .and()
+                .withUser("李四").password(encoder.encode("123456")).roles("vip");
+
+
+//        super.configure(auth);
+    }
 
     /******************* JDBC用户认证 ***********************/
 
@@ -85,54 +84,54 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     /******************* 用户授权管理自定义配置 ***********************/
 
 
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        // 自定义用户授权管理
-        http.authorizeRequests()
-                .antMatchers("/").permitAll()
-                // 需要对static文件夹下静态资源进行统一放行
-                .antMatchers("/login/**").permitAll()
-                .antMatchers("/detail/common/**").hasRole("common")
-                .antMatchers("/detail/vip/**").hasRole("vip")
-                .anyRequest().authenticated();
-//                .and()
-//                .formLogin();
+//    @Override
+//    protected void configure(HttpSecurity http) throws Exception {
+//        // 自定义用户授权管理
+//        http.authorizeRequests()
+//                .antMatchers("/").permitAll()
+//                // 需要对static文件夹下静态资源进行统一放行
+//                .antMatchers("/login/**").permitAll()
+//                .antMatchers("/detail/common/**").hasRole("common")
+//                .antMatchers("/detail/vip/**").hasRole("vip")
+//                .anyRequest().authenticated();
+////                .and()
+////                .formLogin();
+//
+//        // 自定义用户登录控制
+//        http.formLogin()
+//                .loginPage("/userLogin").permitAll()
+//                .usernameParameter("name").passwordParameter("pwd")
+//                .defaultSuccessUrl("/")
+//                .failureUrl("/userLogin?error");
+//
+//        // 自定义用户退出控制
+//        http.logout()
+//                .logoutUrl("/mylogout")
+//                .logoutSuccessUrl("/");
+//
+//        // 定制Remember-me记住我功能
+//        http.rememberMe()
+//                .rememberMeParameter("rememberme")
+//                .tokenValiditySeconds(200)
+//                // 对cookie信息进行持久化管理
+//                .tokenRepository(tokenRepository());
+//
+//        // 可以关闭Spring Security默认开启的CSRF防护功能
+//        http.csrf().disable();
+//
+//    }
 
-        // 自定义用户登录控制
-        http.formLogin()
-                .loginPage("/userLogin").permitAll()
-                .usernameParameter("name").passwordParameter("pwd")
-                .defaultSuccessUrl("/")
-                .failureUrl("/userLogin?error");
-
-        // 自定义用户退出控制
-        http.logout()
-                .logoutUrl("/mylogout")
-                .logoutSuccessUrl("/");
-
-        // 定制Remember-me记住我功能
-        http.rememberMe()
-                .rememberMeParameter("rememberme")
-                .tokenValiditySeconds(200)
-                // 对cookie信息进行持久化管理
-                .tokenRepository(tokenRepository());
-
-        // 可以关闭Spring Security默认开启的CSRF防护功能
-        http.csrf().disable();
-
-    }
-
-    /**
-     * 持久化Token存储
-     *
-     * @return
-     */
-    @Bean
-    public JdbcTokenRepositoryImpl tokenRepository() {
-        JdbcTokenRepositoryImpl jr = new JdbcTokenRepositoryImpl();
-        jr.setDataSource(dataSource);
-        return jr;
-    }
+//    /**
+//     * 持久化Token存储
+//     *
+//     * @return
+//     */
+//    @Bean
+//    public JdbcTokenRepositoryImpl tokenRepository() {
+//        JdbcTokenRepositoryImpl jr = new JdbcTokenRepositoryImpl();
+//        jr.setDataSource(dataSource);
+//        return jr;
+//    }
 
 
 }
