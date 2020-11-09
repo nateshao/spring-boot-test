@@ -24,11 +24,11 @@ import java.util.Enumeration;
  */
 @Controller
 public class FileController {
-//    @GetMapping("/detail/{type}/{path}")
-//    public String toDetail(@PathVariable("type")String type,@PathVariable("Path") String path){
-//
-//        return "detail/"+type+"/"+path;
-//    }
+    @GetMapping("/detail/{type}/{path}")
+    public String toDetail(@PathVariable("type")String type,@PathVariable("Path") String path){
+
+        return "detail/"+type+"/"+path;
+    }
 
 
 
