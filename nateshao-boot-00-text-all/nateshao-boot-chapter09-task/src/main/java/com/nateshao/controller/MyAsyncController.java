@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.concurrent.Future;
 
@@ -16,7 +17,7 @@ import java.util.concurrent.Future;
  * @GitHub https://github.com/nateshao
  * @Gitee https://gitee.com/nateshao
  */
-@Controller
+@RestController
 public class MyAsyncController {
 
     @Autowired
