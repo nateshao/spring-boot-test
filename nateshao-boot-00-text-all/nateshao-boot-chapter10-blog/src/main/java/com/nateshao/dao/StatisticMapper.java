@@ -1,5 +1,7 @@
 package com.nateshao.dao;
 
+import org.apache.ibatis.annotations.Mapper;
+
 /**
  * @date Created by 邵桐杰 on 2020/11/10 10:07
  * @微信公众号 千羽的编程时光
@@ -8,5 +10,6 @@ package com.nateshao.dao;
  * @GitHub https://github.com/nateshao
  * @Gitee https://gitee.com/nateshao
  */
+@Mapper
 public interface StatisticMapper {
 }
