@@ -8,5 +8,13 @@ package com.nateshao.model.domain;
  * @GitHub https://github.com/nateshao
  * @Gitee https://gitee.com/nateshao
  */
+/**
+ * 文章相关动态数据统计实体类
+ * */
 public class Statistic {
+    private Integer id;
+    private Integer articleId;   // 评论的文章id
+    private Integer hits;        // 点击量
+    private Integer commentsNum;// 评论总量
+
 }
