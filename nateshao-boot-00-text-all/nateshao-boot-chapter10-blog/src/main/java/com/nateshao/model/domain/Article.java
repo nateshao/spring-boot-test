@@ -10,6 +10,11 @@ import java.util.Date;
  * @GitHub https://github.com/nateshao
  * @Gitee https://gitee.com/nateshao
  */
+
+/**
+ * 博客文章实体类
+ * 1、使用定制的RedisConfig配置类，实现缓存时的JSON序列化机制
+ */
 public class Article {
 
     private Integer id;          // 文章id
