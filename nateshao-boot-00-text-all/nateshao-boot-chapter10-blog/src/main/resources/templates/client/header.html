@@ -31,7 +31,7 @@
 <![endif]-->
 <header id="header" class="header bg-white">
     <div class="navbar-container">
-        <a th:href="@{/}" class="navbar-logo">CrazyStone个人博客小站</a>
+        <a th:href="@{/}" class="navbar-logo">千羽的编程时光</a>
         <div class="navbar-menu">
             <form name="logoutform" th:action="@{/logout}" method="post"></form>
             <a class="header-info" sec:authorize="isAnonymous()" th:href="@{/login}" >登录</a>
@@ -43,7 +43,7 @@
             <span class="icon-search"></span>
             <form role="search" onsubmit="return false;">
                 <span class="search-box">
-                    <input type="text" id="search-inp" class="input" placeholder="搜索..." maxlength="30"
+                    <input type="text" id="search-inp" class="input" placeholder="搜索..." maxlength="20"
                            autocomplete="off"/>
                 </span>
             </form>
