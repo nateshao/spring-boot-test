@@ -1,5 +1,10 @@
 package com.nateshao.web.client;
 
+import com.nateshao.model.domain.Article;
+import org.apache.commons.lang3.StringUtils;
+
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * @date Created by 邵桐杰 on 2020/11/10 10:30
  * @微信公众号 千羽的编程时光
@@ -8,5 +13,65 @@ package com.nateshao.web.client;
  * @GitHub https://github.com/nateshao
  * @Gitee https://gitee.com/nateshao
  */
+@Controller
 public class IndexController {
+    private static final Logger logger = LoggerFactory.getLogger(IndexController.class);
+
+    @Autowired
+    private IArticleService articleServiceImpl;
+    @Autowired
+    private ICommentService commentServiceImpl;
+    @Autowired
+    private ISiteService siteServiceImpl;
+
+    // 博客首页，会自动跳转到文章页
+    @GetMapping(value = "/")
+    private String index(HttpServletRequest request) {
+        return this.index(request, 1, 5);
+    }
+
+    // 文章页
+    @GetMapping(value = "/page/{p}")
+    public String index(HttpServletRequest request, @PathVariable("p") int page, @RequestParam(value = "count", defaultValue = "5") int count) {
+        PageInfo<Article> articles = articleServiceImpl.selectArticleWithPage(page, count);
+        // 获取文章热度统计信息
+        List<Article> articleList = articleServiceImpl.getHeatArticles();
+        request.setAttribute("articles", articles);
+        request.setAttribute("articleList", articleList);
+        logger.info("分页获取文章信息: 页码 "+page+",条数 "+count);
+        return "client/index";
+    }
+
+    // 文章详情查询
+    @GetMapping(value = "/article/{id}")
+    public String getArticleById(@PathVariable("id") Integer id, HttpServletRequest request){
+        Article article = articleServiceImpl.selectArticleWithId(id);
+        if(article!=null){
+            // 查询封装评论相关数据
+            getArticleComments(request, article);
+            // 更新文章点击量
+            siteServiceImpl.updateStatistics(article);
+            request.setAttribute("article",article);
+            return "client/articleDetails";
+        }else {
+            logger.warn("查询文章详情结果为空，查询文章id: "+id);
+            // 未找到对应文章页面，跳转到提示页
+            return "comm/error_404";
+        }
+    }
+
+    // 查询文章的评论信息，并补充到文章详情里面
+    private void getArticleComments(HttpServletRequest request, Article article) {
+        if (article.getAllowComment()) {
+            // cp表示评论页码，commentPage
+            String cp = request.getParameter("cp");
+            cp = StringUtils.isBlank(cp) ? "1" : cp;
+            request.setAttribute("cp", cp);
+            PageInfo<Comment> comments = commentServiceImpl.getComments(article.getId(),Integer.parseInt(cp),3);
+            request.setAttribute("cp", cp);
+            request.setAttribute("comments", comments);
+        }
+    }
+
 }
+
