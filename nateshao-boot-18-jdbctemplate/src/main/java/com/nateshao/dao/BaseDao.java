@@ -8,15 +8,22 @@ import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.ReflectUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.json.JSONUtil;
-import jdk.nashorn.internal.ir.annotations.Ignore;
+import com.nateshao.annotation.Column;
+import com.nateshao.annotation.Ignore;
+import com.nateshao.annotation.Pk;
+import com.nateshao.annotation.Table;
+import com.nateshao.constant.Const;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
+import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * @date Created by 邵桐杰 on 2020/11/30 12:37
@@ -158,7 +165,7 @@ public class BaseDao<T, P> {
      * @return 表名
      */
     private String getTableName(T t) {
-        Table tableAnnotation = t.getClass().getAnnotation(Table.class);
+        Table tableAnnotation = (Table) t.getClass().getAnnotation(Table.class);
         if (ObjectUtil.isNotNull(tableAnnotation)) {
             return StrUtil.format("`{}`", tableAnnotation.name());
         } else {
