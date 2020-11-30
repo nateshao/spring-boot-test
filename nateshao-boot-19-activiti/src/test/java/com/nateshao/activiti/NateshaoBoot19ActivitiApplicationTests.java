@@ -23,7 +23,6 @@ class NateshaoBoot19ActivitiApplicationTests {
 
     @Test
     public void contextLoads() {
-        securityUtil.logInAs("salaboy");
         Page<ProcessDefinition> processDefinitionPage = processRuntime.processDefinitions(SpringDataWebProperties.Pageable.of(0, 10));
         processDefinitionPage.getContent().forEach(System.out::println);
     }
