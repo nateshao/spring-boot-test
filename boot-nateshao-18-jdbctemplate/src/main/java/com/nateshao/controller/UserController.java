@@ -1,9 +1,10 @@
 package com.nateshao.controller;
 
 import cn.hutool.core.lang.Dict;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import com.nateshao.service.IUserService;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @date Created by 邵桐杰 on 2020/11/30 12:38
