@@ -2,13 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="889ed9d7-f86f-49dc-88db-e3e60e9346a2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nateshao/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nateshao/dao/BaseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nateshao/dao/BaseDao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -71,10 +78,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="初始化完成" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="197" y="0" key="CommitChangelistDialog2" timestamp="1606707237452">
+    <state x="197" y="0" key="CommitChangelistDialog2" timestamp="1606711080638">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="197" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1606707237452" />
+    <state x="197" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1606711080638" />
     <state width="1478" height="148" key="GridCell.Tab.0.bottom" timestamp="1606707568617">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -107,9 +114,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1478" height="148" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1606707568617" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1606707239910">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1606711085560">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1606707239910" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1606711085560" />
   </component>
 </project>
