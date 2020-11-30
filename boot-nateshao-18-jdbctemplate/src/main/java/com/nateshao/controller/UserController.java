@@ -1,10 +1,13 @@
 package com.nateshao.controller;
 
 import cn.hutool.core.lang.Dict;
+import com.nateshao.entity.User;
 import com.nateshao.service.IUserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * @date Created by 邵桐杰 on 2020/11/30 12:38

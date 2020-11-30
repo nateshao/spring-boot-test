@@ -3,6 +3,7 @@ package com.nateshao.entity;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * @date Created by 邵桐杰 on 2020/11/30 12:36

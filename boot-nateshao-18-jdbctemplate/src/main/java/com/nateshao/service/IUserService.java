@@ -1,5 +1,9 @@
 package com.nateshao.service;
 
+import com.nateshao.entity.User;
+
+import java.util.List;
+
 /**
  * @date Created by 邵桐杰 on 2020/11/30 12:34
  * @微信公众号 千羽的编程时光

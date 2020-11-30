@@ -1,8 +1,11 @@
 package com.nateshao.dao;
 
+import com.nateshao.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 /**
  * @date Created by 邵桐杰 on 2020/11/30 12:36
