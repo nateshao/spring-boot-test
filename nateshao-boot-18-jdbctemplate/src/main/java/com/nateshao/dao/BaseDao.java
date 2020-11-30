@@ -179,7 +179,7 @@ public class BaseDao<T, P> {
      * @return 表名
      */
     private String getTableName() {
-        Table tableAnnotation = clazz.getAnnotation(Table.class);
+        Table tableAnnotation = (Table) clazz.getAnnotation(Table.class);
         if (ObjectUtil.isNotNull(tableAnnotation)) {
             return StrUtil.format("`{}`", tableAnnotation.name());
         } else {
