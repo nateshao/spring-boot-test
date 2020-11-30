@@ -1,5 +1,10 @@
 package com.nateshao.annotation;
 
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
 /**
  * @date Created by 邵桐杰 on 2020/11/30 12:53
  * @微信公众号 千羽的编程时光
@@ -9,5 +14,7 @@ package com.nateshao.annotation;
  * @Gitee https://gitee.com/nateshao
  * Description：
  */
-public interface Ignore {
+@Retention(RetentionPolicy.RUNTIME)
+@Target({ElementType.FIELD})
+public @interface Ignore {
 }
