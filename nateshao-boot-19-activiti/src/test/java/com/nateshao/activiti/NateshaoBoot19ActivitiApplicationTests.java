@@ -21,10 +21,10 @@ class NateshaoBoot19ActivitiApplicationTests {
     @Autowired
     private SecurityUtil securityUtil;
 
-    @Test
-    public void contextLoads() {
-        Page<ProcessDefinition> processDefinitionPage = processRuntime.processDefinitions(SpringDataWebProperties.Pageable.of(0, 10));
-        processDefinitionPage.getContent().forEach(System.out::println);
-    }
+//    @Test
+//    public void contextLoads() {
+//        Page<ProcessDefinition> processDefinitionPage = processRuntime.processDefinitions(SpringDataWebProperties.Pageable.of(0, 10));
+//        processDefinitionPage.getContent().forEach(System.out::println);
+//    }
 
 }

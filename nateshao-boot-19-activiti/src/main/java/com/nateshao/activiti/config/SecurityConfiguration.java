@@ -37,16 +37,18 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Bean
     protected UserDetailsService myUserDetailsService() {
         InMemoryUserDetailsManager inMemoryUserDetailsManager = new InMemoryUserDetailsManager();
-
-        String[][] usersGroupsAndRoles = {{"salaboy", "password", "ROLE_ACTIVITI_USER", "GROUP_activitiTeam"}, {"ryandawsonuk", "password", "ROLE_ACTIVITI_USER", "GROUP_activitiTeam"}, {"erdemedeiros", "password", "ROLE_ACTIVITI_USER", "GROUP_activitiTeam"}, {"other", "password", "ROLE_ACTIVITI_USER", "GROUP_otherTeam"}, {"admin", "password", "ROLE_ACTIVITI_ADMIN"}};
+        String[][] usersGroupsAndRoles =
+                {{"salaboy", "password", "ROLE_ACTIVITI_USER", "GROUP_activitiTeam"},
+                {"ryandawsonuk", "password", "ROLE_ACTIVITI_USER", "GROUP_activitiTeam"},
+                {"erdemedeiros", "password", "ROLE_ACTIVITI_USER", "GROUP_activitiTeam"},
+                {"other", "password", "ROLE_ACTIVITI_USER", "GROUP_otherTeam"},
+                {"admin", "password", "ROLE_ACTIVITI_ADMIN"}};
 
         for (String[] user : usersGroupsAndRoles) {
             List<String> authoritiesStrings = Arrays.asList(Arrays.copyOfRange(user, 2, user.length));
             log.info("> Registering new user: " + user[0] + " with the following Authorities[" + authoritiesStrings + "]");
             inMemoryUserDetailsManager.createUser(new User(user[0], passwordEncoder().encode(user[1]), authoritiesStrings.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList())));
         }
-
-
         return inMemoryUserDetailsManager;
     }
 
