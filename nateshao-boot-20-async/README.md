@@ -1,4 +1,4 @@
-# spring-boot-demo-async
+# nateshao-boot-20-async
 
 > 此 demo 主要演示了 Spring Boot 如何使用原生提供的异步任务支持，实现异步执行任务。
 
@@ -7,25 +7,21 @@
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
-    <artifactId>spring-boot-demo-async</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
-
-    <name>spring-boot-demo-async</name>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.4.0</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.nateshao</groupId>
+    <artifactId>nateshao-boot-20-async</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>nateshao-boot-20-async</name>
     <description>Demo project for Spring Boot</description>
 
-    <parent>
-        <groupId>com.xkcoding</groupId>
-        <artifactId>spring-boot-demo</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
-    </parent>
-
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
     </properties>
 
@@ -49,7 +45,6 @@
     </dependencies>
 
     <build>
-        <finalName>spring-boot-demo-async</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -85,14 +80,6 @@ spring:
 ## SpringBootDemoAsyncApplication.java
 
 ```java
-/**
- * <p>
- * 启动器
- * </p>
- *
- * @author yangkai.shen
- * @date Created in 2018-12-29 10:28
- */
 @EnableAsync
 @SpringBootApplication
 public class SpringBootDemoAsyncApplication {
@@ -107,14 +94,6 @@ public class SpringBootDemoAsyncApplication {
 ## TaskFactory.java
 
 ```java
-/**
- * <p>
- * 任务工厂
- * </p>
- *
- * @author yangkai.shen
- * @date Created in 2018-12-29 10:37
- */
 @Component
 @Slf4j
 public class TaskFactory {
@@ -178,14 +157,6 @@ public class TaskFactory {
 ## TaskFactoryTest.java
 
 ```java
-/**
- * <p>
- * 测试任务
- * </p>
- *
- * @author yangkai.shen
- * @date Created in 2018-12-29 10:49
- */
 @Slf4j
 public class TaskFactoryTest extends SpringBootDemoAsyncApplicationTests {
     @Autowired
@@ -231,25 +202,11 @@ public class TaskFactoryTest extends SpringBootDemoAsyncApplicationTests {
 ### 异步任务
 
 ```bash
-2018-12-29 10:57:28.511  INFO 3134 --- [   async-task-3] com.xkcoding.async.task.TaskFactory      : asyncTask3开始执行，当前线程名称【async-task-3】
-2018-12-29 10:57:28.511  INFO 3134 --- [   async-task-1] com.xkcoding.async.task.TaskFactory      : asyncTask1开始执行，当前线程名称【async-task-1】
-2018-12-29 10:57:28.511  INFO 3134 --- [   async-task-2] com.xkcoding.async.task.TaskFactory      : asyncTask2开始执行，当前线程名称【async-task-2】
-2018-12-29 10:57:30.514  INFO 3134 --- [   async-task-2] com.xkcoding.async.task.TaskFactory      : asyncTask2执行成功，当前线程名称【async-task-2】
-2018-12-29 10:57:31.516  INFO 3134 --- [   async-task-3] com.xkcoding.async.task.TaskFactory      : asyncTask3执行成功，当前线程名称【async-task-3】
-2018-12-29 10:57:33.517  INFO 3134 --- [   async-task-1] com.xkcoding.async.task.TaskFactory      : asyncTask1执行成功，当前线程名称【async-task-1】
-2018-12-29 10:57:33.517  INFO 3134 --- [           main] com.xkcoding.async.task.TaskFactoryTest  : 异步任务全部执行结束，总耗时：5015 毫秒
 ```
 
 ### 同步任务
 
 ```bash
-2018-12-29 10:55:49.830  INFO 3079 --- [           main] com.xkcoding.async.task.TaskFactory      : task1开始执行，当前线程名称【main】
-2018-12-29 10:55:54.834  INFO 3079 --- [           main] com.xkcoding.async.task.TaskFactory      : task1执行成功，当前线程名称【main】
-2018-12-29 10:55:54.835  INFO 3079 --- [           main] com.xkcoding.async.task.TaskFactory      : task2开始执行，当前线程名称【main】
-2018-12-29 10:55:56.839  INFO 3079 --- [           main] com.xkcoding.async.task.TaskFactory      : task2执行成功，当前线程名称【main】
-2018-12-29 10:55:56.839  INFO 3079 --- [           main] com.xkcoding.async.task.TaskFactory      : task3开始执行，当前线程名称【main】
-2018-12-29 10:55:59.843  INFO 3079 --- [           main] com.xkcoding.async.task.TaskFactory      : task3执行成功，当前线程名称【main】
-2018-12-29 10:55:59.843  INFO 3079 --- [           main] com.xkcoding.async.task.TaskFactoryTest  : 同步任务全部执行结束，总耗时：10023 毫秒
 ```
 
 ## 参考
