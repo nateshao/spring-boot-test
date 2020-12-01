@@ -1,4 +1,4 @@
-# spring-boot-demo-cache-ehcache
+# nateshao-boot-21-cache-ehcache
 
 > 此 demo 主要演示了 Spring Boot 如何集成 ehcache 使用缓存。
 
@@ -7,25 +7,21 @@
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
-    <artifactId>spring-boot-demo-cache-ehcache</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
-
-    <name>spring-boot-demo-cache-ehcache</name>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.4.0</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.nateshao</groupId>
+    <artifactId>nateshao-boot-21-cache-ehcache</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>nateshao-boot-21-cache-ehcache</name>
     <description>Demo project for Spring Boot</description>
 
-    <parent>
-        <groupId>com.xkcoding</groupId>
-        <artifactId>spring-boot-demo</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
-    </parent>
-
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
     </properties>
 
@@ -54,6 +50,7 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
+            <version>16.0.1</version>
         </dependency>
 
         <dependency>
@@ -64,7 +61,6 @@
     </dependencies>
 
     <build>
-        <finalName>spring-boot-demo-cache-ehcache</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -79,22 +75,14 @@
 ## SpringBootDemoCacheEhcacheApplication.java
 
 ```java
-/**
- * <p>
- * 启动类
- * </p>
- *
- * @author yangkai.shen
- * @date Created in 2018-11-16 17:02
- */
-@SpringBootApplication
-@EnableCaching
-public class SpringBootDemoCacheEhcacheApplication {
-
-    public static void main(String[] args) {
-        SpringApplication.run(SpringBootDemoCacheEhcacheApplication.class, args);
-    }
-}
+ @SpringBootApplication
+ public class NateshaoBoot21CacheEhcacheApplication {
+ 
+     public static void main(String[] args) {
+         SpringApplication.run(NateshaoBoot21CacheEhcacheApplication.class, args);
+     }
+ 
+ }
 ```
 
 ## application.yml
@@ -107,7 +95,7 @@ spring:
       config: classpath:ehcache.xml
 logging:
   level:
-    com.xkcoding: debug
+    com.nateshao: debug
 ```
 
 ## ehcache.xml
@@ -155,14 +143,6 @@ logging:
 ## UserServiceImpl.java
 
 ```java
-/**
- * <p>
- * UserService
- * </p>
- *
- * @author yangkai.shen
- * @date Created in 2018-11-16 16:54
- */
 @Service
 @Slf4j
 public class UserServiceImpl implements UserService {
@@ -225,14 +205,6 @@ public class UserServiceImpl implements UserService {
 ## UserServiceTest.java
 
 ```java
-/**
- * <p>
- * ehcache缓存测试
- * </p>
- *
- * @author yangkai.shen
- * @date Created in 2018-11-16 16:58
- */
 @Slf4j
 public class UserServiceTest extends SpringBootDemoCacheEhcacheApplicationTests {
 
