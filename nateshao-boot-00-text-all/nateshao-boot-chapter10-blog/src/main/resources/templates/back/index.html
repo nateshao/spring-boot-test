@@ -42,8 +42,8 @@
                                         <li class="list-group-item" th:each="article : ${articles}">
                                         <span class="badge badge-primary" th:text="${article.commentsNum}">
                                         </span>
-                                        <a target="_blank" th:href="${commons.site_url('/article/')}+${article.id}"
-                                             th:text="${article.title}"></a>
+                                            <a target="_blank" th:href="${commons.site_url('/article/')}+${article.id}"
+                                               th:text="${article.title}"></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -62,9 +62,12 @@
                                     </div>
                                     <ul class="list-group" th:unless="${comments}==null and ${comments.size()}==0">
                                         <li class="list-group-item" th:each="comment : ${comments}">
-                                            <th:block th:text="${comment.author}"/>于 <th:block th:text="${commons.dateFormat(comment.created)}"/>：
-                                                <a th:href="${commons.site_url('/article/')}+${comment.articleId}+'#comments'"
-                                                target="_blank" th:utext="${commons.article(comment.content)}"></a>
+                                            <th:block th:text="${comment.author}"/>
+                                            于
+                                            <th:block th:text="${commons.dateFormat(comment.created)}"/>
+                                            ：
+                                            <a th:href="${commons.site_url('/article/')}+${comment.articleId}+'#comments'"
+                                               target="_blank" th:utext="${commons.article(comment.content)}"></a>
                                         </li>
                                     </ul>
                                 </div>

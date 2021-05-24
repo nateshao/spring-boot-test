@@ -20,14 +20,15 @@ import org.springframework.web.bind.annotation.RestController;
 public class CommentController {
     @Autowired
     private CommentService commentService;
+
     @GetMapping("/get/{id}")
-    public Comment findById(@PathVariable("id") int comment_id){
+    public Comment findById(@PathVariable("id") int comment_id) {
         Comment comment = commentService.findById(comment_id);
         return comment;
     }
 
     @GetMapping("/update/{id}/{author}")
-    public Comment updateComment(@PathVariable("id") int comment_id,@PathVariable("author") String author){
+    public Comment updateComment(@PathVariable("id") int comment_id, @PathVariable("author") String author) {
         Comment comment = commentService.findById(comment_id);
         comment.setAuthor(author);
         Comment updateComment = commentService.updateComment(comment);
@@ -35,7 +36,7 @@ public class CommentController {
     }
 
     @GetMapping("/delete/{id}")
-    public void deleteComment(@PathVariable("id")int comment_id){
+    public void deleteComment(@PathVariable("id") int comment_id) {
         commentService.deleteComment(comment_id);
     }
 

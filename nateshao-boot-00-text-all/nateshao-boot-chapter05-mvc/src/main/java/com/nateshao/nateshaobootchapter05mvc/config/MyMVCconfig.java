@@ -26,6 +26,7 @@ public class MyMVCconfig implements WebMvcConfigurer {
 
     @Autowired
     private MyInterceptor myInterceptor;
+
     // 添加拦截器管理
     @Override
     public void addInterceptors(InterceptorRegistry registry) {

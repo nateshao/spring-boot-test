@@ -11,7 +11,6 @@ package com.nateshao.model.ResponseData;
 
 /**
  * 前端请求响应的封装类
- *
  */
 public class ArticleResponseData<T> {
     private T payload;        //服务器响应数据

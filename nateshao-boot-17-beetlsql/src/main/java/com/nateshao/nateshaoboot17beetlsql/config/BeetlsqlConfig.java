@@ -17,7 +17,7 @@ import org.springframework.context.annotation.Configuration;
 public class BeetlsqlConfig {
 
     @Bean
-    public HikariDataSource hikariDataSource(){
+    public HikariDataSource hikariDataSource() {
         HikariDataSource dataSource = new HikariDataSource();
         dataSource.setUsername("root");
         dataSource.setPassword("123456");

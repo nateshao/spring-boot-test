@@ -13,7 +13,9 @@ import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.RedisSerializationContext;
 import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
+
 import java.time.Duration;
+
 /**
  * @date Created by 邵桐杰 on 2020/10/27 21:13
  * @微信公众号 千羽的编程时光

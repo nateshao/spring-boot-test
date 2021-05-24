@@ -8,6 +8,7 @@ package com.nateshao.model.ResponseData;
  * @GitHub https://github.com/nateshao
  * @Gitee https://gitee.com/nateshao
  */
+
 /**
  * 全站服务统计类
  */

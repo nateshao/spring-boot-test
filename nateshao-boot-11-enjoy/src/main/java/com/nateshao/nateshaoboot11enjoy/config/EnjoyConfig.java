@@ -30,7 +30,7 @@ public class EnjoyConfig {
         jfr.setSuffix(".html");
         jfr.setContentType("text/html;charset=UTF-8");
         jfr.setOrder(0);
-        jfr.addDirective("name",NameDirective.class);
+        jfr.addDirective("name", NameDirective.class);
         return jfr;
     }
 }

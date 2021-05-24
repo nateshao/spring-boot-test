@@ -30,11 +30,12 @@ public class SendEmailService {
 
     /**
      * 发送纯文本邮件
-     * @param to       收件人地址
-     * @param subject  邮件标题
-     * @param text     邮件内容
+     *
+     * @param to      收件人地址
+     * @param subject 邮件标题
+     * @param text    邮件内容
      */
-    public void sendSimpleEmail(String to,String subject,String text){
+    public void sendSimpleEmail(String to, String subject, String text) {
         // 定制纯文本邮件信息SimpleMailMessage
         SimpleMailMessage message = new SimpleMailMessage();
         message.setFrom(from);
@@ -46,21 +47,22 @@ public class SendEmailService {
             mailSender.send(message);
             System.out.println("纯文本邮件发送成功");
         } catch (MailException e) {
-            System.out.println("纯文本邮件发送失败 "+e.getMessage());
+            System.out.println("纯文本邮件发送失败 " + e.getMessage());
             e.printStackTrace();
         }
     }
 
     /**
      * 发送复杂邮件（包括静态资源和附件）
-     * @param to           收件人地址
-     * @param subject      邮件标题
-     * @param text         邮件内容
-     * @param filePath     附件地址
-     * @param rscId        静态资源唯一标识
-     * @param rscPath      静态资源地址
+     *
+     * @param to       收件人地址
+     * @param subject  邮件标题
+     * @param text     邮件内容
+     * @param filePath 附件地址
+     * @param rscId    静态资源唯一标识
+     * @param rscPath  静态资源地址
      */
-    public void sendComplexEmail(String to,String subject,String text,String filePath,String rscId,String rscPath){
+    public void sendComplexEmail(String to, String subject, String text, String filePath, String rscId, String rscPath) {
         // 定制复杂邮件信息MimeMessage
         MimeMessage message = mailSender.createMimeMessage();
         try {
@@ -81,16 +83,17 @@ public class SendEmailService {
             mailSender.send(message);
             System.out.println("复杂邮件发送成功");
         } catch (MessagingException e) {
-            System.out.println("复杂邮件发送失败 "+e.getMessage());
+            System.out.println("复杂邮件发送失败 " + e.getMessage());
             e.printStackTrace();
         }
     }
 
     /**
      * 发送模板邮件
-     * @param to       收件人地址
-     * @param subject  邮件标题
-     * @param content  邮件内容
+     *
+     * @param to      收件人地址
+     * @param subject 邮件标题
+     * @param content 邮件内容
      */
     public void sendTemplateEmail(String to, String subject, String content) {
         MimeMessage message = mailSender.createMimeMessage();
@@ -105,7 +108,7 @@ public class SendEmailService {
             mailSender.send(message);
             System.out.println("模板邮件发送成功");
         } catch (MessagingException e) {
-            System.out.println("模板邮件发送失败 "+e.getMessage());
+            System.out.println("模板邮件发送失败 " + e.getMessage());
             e.printStackTrace();
         }
     }

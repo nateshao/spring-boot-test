@@ -1,4 +1,3 @@
-
 spring:
   datasource:
     username: root
@@ -8,13 +7,13 @@ spring:
 
 
 mybatis:
-  # ж╦╤╗ mapper xml ╣днд╪Ч╣ьж╥
+  # ж╦О©╫О©╫ mapper xml О©╫О©╫О©╫д╪О©╫О©╫О©╫ж╥
   mapper-locations: classpath:mapper/**.xml
   configuration:
-    # му╥ЕеДжц
+    # О©╫у╥О©╫О©╫О©╫О©╫О©╫
     map-underscore-to-camel-case: true
 
-    # ╢Рс║хуж╬
+    # О©╫О©╫с║О©╫О©╫ж╬
 logging:
   level:
     com:

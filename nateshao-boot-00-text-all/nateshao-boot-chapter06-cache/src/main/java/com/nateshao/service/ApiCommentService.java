@@ -25,33 +25,34 @@ public class ApiCommentService {
     @Autowired
     private RedisTemplate redisTemplate;
 
-    public Comment findById(int comment_id){
+    public Comment findById(int comment_id) {
         Object object = redisTemplate.opsForValue().get("comment_" + comment_id);
-        if (object != null){
+        if (object != null) {
             return (Comment) object;
-        }else {
+        } else {
             // 缓存没有，就查询数据库
             Optional<Comment> optional = commentRepository.findById(comment_id);
-            if (optional.isPresent()){
+            if (optional.isPresent()) {
                 Comment comment = optional.get();
-                redisTemplate.opsForValue().set("comment_"+comment_id,comment,1, TimeUnit.DAYS);
+                redisTemplate.opsForValue().set("comment_" + comment_id, comment, 1, TimeUnit.DAYS);
                 return comment;
-            }else {
+            } else {
                 return null;
             }
         }
 
     }
 
-    public Comment updateComment(Comment comment){
+    public Comment updateComment(Comment comment) {
 
         commentRepository.updateComment(comment.getAuthor(), comment.getaId());
 
         return comment;
     }
-    public void deleteComment(int comment_id){
+
+    public void deleteComment(int comment_id) {
         commentRepository.deleteById(comment_id);
-        redisTemplate.delete("comment_"+comment_id);
+        redisTemplate.delete("comment_" + comment_id);
     }
 
 

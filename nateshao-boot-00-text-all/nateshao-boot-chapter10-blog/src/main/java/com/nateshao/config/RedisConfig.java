@@ -33,7 +33,8 @@ import java.time.Duration;
 public class RedisConfig extends CachingConfigurerSupport {
 
     /**
-     *  定制Redis API模板RedisTemplate
+     * 定制Redis API模板RedisTemplate
+     *
      * @param redisConnectionFactory
      * @return
      */
@@ -57,6 +58,7 @@ public class RedisConfig extends CachingConfigurerSupport {
 
     /**
      * 定制Redis缓存管理器RedisCacheManager，实现自定义序列化并设置缓存时效
+     *
      * @param redisConnectionFactory
      * @return
      */

@@ -25,6 +25,7 @@ class NateshaoBoot16MybatisPlusApplicationTests {
         System.out.println(users);
 
     }
+
     @Test
     void queryOne() {
         User user = new User();
@@ -40,6 +41,7 @@ class NateshaoBoot16MybatisPlusApplicationTests {
         List<User> users = userMapper.selectList(Wrappers.<User>lambdaQuery().eq(User::getUsername, "nateshao"));
         System.out.println(users);
     }
+
     @Test
     void Query3() {
         // 分页查询
@@ -50,6 +52,7 @@ class NateshaoBoot16MybatisPlusApplicationTests {
         System.out.println(page1.getTotal());
 
     }
+
     @Test
     void Query4() {
         // ActiveRecord

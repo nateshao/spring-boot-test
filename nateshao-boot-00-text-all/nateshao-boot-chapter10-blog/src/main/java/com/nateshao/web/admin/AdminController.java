@@ -53,9 +53,10 @@ public class AdminController {
 
     // 向文章发表页面跳转
     @GetMapping(value = "/article/toEditPage")
-    public String newArticle( ) {
+    public String newArticle() {
         return "back/article_edit";
     }
+
     // 发表文章
     @PostMapping(value = "/article/publish")
     @ResponseBody
@@ -68,10 +69,11 @@ public class AdminController {
             logger.info("文章发布成功");
             return ArticleResponseData.ok();
         } catch (Exception e) {
-            logger.error("文章发布失败，错误信息: "+e.getMessage());
+            logger.error("文章发布失败，错误信息: " + e.getMessage());
             return ArticleResponseData.fail();
         }
     }
+
     // 跳转到后台文章列表页面
     @GetMapping(value = "/article")
     public String index(@RequestParam(value = "page", defaultValue = "1") int page,
@@ -100,7 +102,7 @@ public class AdminController {
             logger.info("文章更新成功");
             return ArticleResponseData.ok();
         } catch (Exception e) {
-            logger.error("文章更新失败，错误信息: "+e.getMessage());
+            logger.error("文章更新失败，错误信息: " + e.getMessage());
             return ArticleResponseData.fail();
         }
     }
@@ -114,11 +116,10 @@ public class AdminController {
             logger.info("文章删除成功");
             return ArticleResponseData.ok();
         } catch (Exception e) {
-            logger.error("文章删除失败，错误信息: "+e.getMessage());
+            logger.error("文章删除失败，错误信息: " + e.getMessage());
             return ArticleResponseData.fail();
         }
     }
-
 
 
 }

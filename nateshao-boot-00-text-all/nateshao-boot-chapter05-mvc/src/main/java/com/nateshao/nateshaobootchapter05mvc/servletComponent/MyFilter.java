@@ -17,7 +17,7 @@ import java.io.IOException;
  * @Gitee https://gitee.com/nateshao
  */
 //@Component
-@WebFilter(value = {"/antionLogin","/antionMyFilter"})
+@WebFilter(value = {"/antionLogin", "/antionMyFilter"})
 public class MyFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -27,7 +27,7 @@ public class MyFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         System.out.println("hello MyFilter");
-        filterChain.doFilter(servletRequest,servletResponse);
+        filterChain.doFilter(servletRequest, servletResponse);
     }
 
     @Override

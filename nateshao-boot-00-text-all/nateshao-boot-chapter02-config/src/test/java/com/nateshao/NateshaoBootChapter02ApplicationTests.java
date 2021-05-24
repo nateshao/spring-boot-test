@@ -42,8 +42,10 @@ public class NateshaoBootChapter02ApplicationTests {
     public void iocTest() {
         System.out.println(applicationContext.containsBean("myService"));
     }
+
     @Value("${tom.description}")
     private String description;
+
     @Test
     public void placeholderTest() {
         System.out.println(description);

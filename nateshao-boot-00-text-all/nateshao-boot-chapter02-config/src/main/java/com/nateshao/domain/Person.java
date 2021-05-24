@@ -2,7 +2,9 @@ package com.nateshao.domain;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
+
 import java.util.*;
+
 /**
  * @date Created by 邵桐杰 on 2020/9/13 23:20
  * @微信公众号 千羽的编程时光

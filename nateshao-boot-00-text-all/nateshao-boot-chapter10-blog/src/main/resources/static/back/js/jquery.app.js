@@ -204,6 +204,7 @@ function executeFunctionByName(functionName, context /*, args */) {
     }
     return context[func].apply(this, args);
 }
+
 var w, h, dw, dh;
 var changeptype = function () {
     w = $(window).width();

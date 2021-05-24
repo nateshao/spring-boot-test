@@ -22,7 +22,7 @@ class UserServiceTest {
     @Test
     void insert() {
         for (int i = 0; i < 10; i++) {
-            userService.insert("nateshao","nateshao123");
+            userService.insert("nateshao", "nateshao123");
         }
     }
 
@@ -37,7 +37,7 @@ class UserServiceTest {
 
     @Test
     void update() {
-        userService.update("nateshao332",1);
+        userService.update("nateshao332", 1);
     }
 
     @Test

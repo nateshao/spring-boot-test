@@ -24,22 +24,25 @@ class NateshaoBoot13JpaApplicationTests {
         userDao.save(user);
 
     }
+
     @Test
-    void delete(){
+    void delete() {
         SysUser user1 = new SysUser();
         user1.setId(8);
         userDao.delete(user1);
     }
+
     @Test
-    void  testUpd(){
+    void testUpd() {
         Optional<SysUser> optional = userDao.findById(4);
         SysUser sysUser = optional.get();
 
         sysUser.setPassword("newpwd");
         userDao.save(sysUser);
     }
+
     @Test
-    void testQuery(){
+    void testQuery() {
 //        Iterable<SysUser> all = userDao.findAll();
 //        System.out.println(all);
 

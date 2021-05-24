@@ -21,15 +21,16 @@ import org.springframework.web.bind.annotation.RestController;
 public class ApiCommentController {
     @Autowired
     private ApiCommentService apiCommentService;
+
     @GetMapping("/get/{id}")
-    public Comment findById(@PathVariable("id") int comment_id){
+    public Comment findById(@PathVariable("id") int comment_id) {
         Comment comment = apiCommentService.findById(comment_id);
         return comment;
     }
 
 
     @GetMapping("/update/{id}")
-    public Comment updateComment(@PathVariable("id") int comment_id,@PathVariable("author") String author){
+    public Comment updateComment(@PathVariable("id") int comment_id, @PathVariable("author") String author) {
         Comment comment = apiCommentService.findById(comment_id);
         comment.setAuthor(author);
         Comment updateComment = apiCommentService.updateComment(comment);
@@ -37,7 +38,7 @@ public class ApiCommentController {
     }
 
     @GetMapping("/delete/{id}")
-    public void dateleteComment(@PathVariable("id") int comment_id){
+    public void dateleteComment(@PathVariable("id") int comment_id) {
         apiCommentService.deleteComment(comment_id);
     }
 }

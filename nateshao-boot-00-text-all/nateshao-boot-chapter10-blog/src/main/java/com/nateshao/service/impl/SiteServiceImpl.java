@@ -38,20 +38,20 @@ public class SiteServiceImpl implements ISiteService {
     @Override
     public void updateStatistics(Article article) {
         Statistic statistic = statisticMapper.selectStatisticWithArticleId(article.getId());
-        statistic.setHits(statistic.getHits()+1);
+        statistic.setHits(statistic.getHits() + 1);
         statisticMapper.updateArticleHitsWithId(statistic);
     }
 
     @Override
     public List<Comment> recentComments(int limit) {
-        PageHelper.startPage(1, limit>10 || limit<1 ? 10:limit);
+        PageHelper.startPage(1, limit > 10 || limit < 1 ? 10 : limit);
         List<Comment> byPage = commentMapper.selectNewComment();
         return byPage;
     }
 
     @Override
     public List<Article> recentArticles(int limit) {
-        PageHelper.startPage(1, limit>10 || limit<1 ? 10:limit);
+        PageHelper.startPage(1, limit > 10 || limit < 1 ? 10 : limit);
         List<Article> list = articleMapper.selectArticleWithPage();
         // 封装文章统计数据
         for (int i = 0; i < list.size(); i++) {

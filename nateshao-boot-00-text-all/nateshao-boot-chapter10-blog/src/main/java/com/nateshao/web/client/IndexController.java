@@ -51,23 +51,23 @@ public class IndexController {
         List<Article> articleList = articleServiceImpl.getHeatArticles();
         request.setAttribute("articles", articles);
         request.setAttribute("articleList", articleList);
-        logger.info("分页获取文章信息: 页码 "+page+",条数 "+count);
+        logger.info("分页获取文章信息: 页码 " + page + ",条数 " + count);
         return "client/index";
     }
 
     // 文章详情查询
     @GetMapping(value = "/article/{id}")
-    public String getArticleById(@PathVariable("id") Integer id, HttpServletRequest request){
+    public String getArticleById(@PathVariable("id") Integer id, HttpServletRequest request) {
         Article article = articleServiceImpl.selectArticleWithId(id);
-        if(article!=null){
+        if (article != null) {
             // 查询封装评论相关数据
             getArticleComments(request, article);
             // 更新文章点击量
             siteServiceImpl.updateStatistics(article);
-            request.setAttribute("article",article);
+            request.setAttribute("article", article);
             return "client/articleDetails";
-        }else {
-            logger.warn("查询文章详情结果为空，查询文章id: "+id);
+        } else {
+            logger.warn("查询文章详情结果为空，查询文章id: " + id);
             // 未找到对应文章页面，跳转到提示页
             return "comm/error_404";
         }
@@ -80,7 +80,7 @@ public class IndexController {
             String cp = request.getParameter("cp");
             cp = StringUtils.isBlank(cp) ? "1" : cp;
             request.setAttribute("cp", cp);
-            PageInfo<Comment> comments = commentServiceImpl.getComments(article.getId(),Integer.parseInt(cp),3);
+            PageInfo<Comment> comments = commentServiceImpl.getComments(article.getId(), Integer.parseInt(cp), 3);
             request.setAttribute("cp", cp);
             request.setAttribute("comments", comments);
         }

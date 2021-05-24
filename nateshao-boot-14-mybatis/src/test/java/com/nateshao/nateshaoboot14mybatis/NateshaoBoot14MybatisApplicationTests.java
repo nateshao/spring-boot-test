@@ -18,6 +18,7 @@ class NateshaoBoot14MybatisApplicationTests {
 
     @Autowired
     private UserDao userDao;
+
     @Test
     void contextLoads() {
         System.out.println(sysUserMapper.selectAll());
@@ -34,7 +35,7 @@ class NateshaoBoot14MybatisApplicationTests {
     }
 
     @Test
-    void selectUser(){
+    void selectUser() {
         List<User> users = userDao.queryAll(new User());
         System.out.println(users);
 

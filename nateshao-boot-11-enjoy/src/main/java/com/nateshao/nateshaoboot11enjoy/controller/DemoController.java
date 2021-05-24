@@ -24,12 +24,12 @@ public class DemoController {
     public ModelAndView demo() {
         ModelAndView modelAndView = new ModelAndView();
 
-        modelAndView.addObject("username","nateshao");
+        modelAndView.addObject("username", "nateshao");
         modelAndView.setViewName("index");
-        SysUser sysUser = new SysUser(1,"nateshao1111");
-        SysUser sysUser1 = new SysUser(1,"nateshao2222");
-        SysUser sysUser2 = new SysUser(1,"nateshao3333");
-        SysUser sysUser3 = new SysUser(1,"nateshao4444");
+        SysUser sysUser = new SysUser(1, "nateshao1111");
+        SysUser sysUser1 = new SysUser(1, "nateshao2222");
+        SysUser sysUser2 = new SysUser(1, "nateshao3333");
+        SysUser sysUser3 = new SysUser(1, "nateshao4444");
 
         List<SysUser> userList = new ArrayList<>();
         userList.add(sysUser);
@@ -37,8 +37,8 @@ public class DemoController {
         userList.add(sysUser2);
         userList.add(sysUser3);
 
-        modelAndView.addObject("userList",userList);
-        modelAndView.addObject("date",new Date());
+        modelAndView.addObject("userList", userList);
+        modelAndView.addObject("date", new Date());
 
         return modelAndView;
     }

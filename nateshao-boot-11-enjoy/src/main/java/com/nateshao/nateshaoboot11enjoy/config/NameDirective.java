@@ -21,11 +21,11 @@ public class NameDirective extends Directive {
 
     @Override
     public void exec(Env env, Scope scope, Writer writer) {
-       try {
-           writer.write("我是自定义指令");
-       }catch (IOException e){
-           e.printStackTrace();
-       }
+        try {
+            writer.write("我是自定义指令");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
 

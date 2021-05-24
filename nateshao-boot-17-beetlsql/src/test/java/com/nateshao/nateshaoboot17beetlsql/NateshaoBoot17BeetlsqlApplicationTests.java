@@ -14,10 +14,12 @@ class NateshaoBoot17BeetlsqlApplicationTests {
 
     @Autowired
     private UserDao userDao;
+
     @Test
     void contextLoads() {
         System.out.println(userDao.all());
     }
+
     @Test
     void insert() {
         User user = new User();
@@ -25,6 +27,7 @@ class NateshaoBoot17BeetlsqlApplicationTests {
         user.setPassword("qqqqqq");
         userDao.insert(user);
     }
+
     @Test
     void query() {
         List<User> nateshao = userDao.selectByUsername("nateshao");

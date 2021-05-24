@@ -34,7 +34,7 @@ public class CommentServiceImpl implements ICommentService {
     // 根据文章id分页查询评论
     @Override
     public PageInfo<Comment> getComments(Integer aid, int page, int count) {
-        PageHelper.startPage(page,count);
+        PageHelper.startPage(page, count);
         List<Comment> commentList = commentMapper.selectCommentWithPage(aid);
         PageInfo<Comment> commentInfo = new PageInfo<>(commentList);
         return commentInfo;
@@ -42,11 +42,11 @@ public class CommentServiceImpl implements ICommentService {
 
     // 用户发表评论
     @Override
-    public void pushComment(Comment comment){
+    public void pushComment(Comment comment) {
         commentMapper.pushComment(comment);
         // 更新文章评论数据量
         Statistic statistic = statisticMapper.selectStatisticWithArticleId(comment.getArticleId());
-        statistic.setCommentsNum(statistic.getCommentsNum()+1);
+        statistic.setCommentsNum(statistic.getCommentsNum() + 1);
         statisticMapper.updateArticleCommentsWithId(statistic);
     }
 

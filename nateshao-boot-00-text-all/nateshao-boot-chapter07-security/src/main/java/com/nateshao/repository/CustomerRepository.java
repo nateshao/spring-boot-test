@@ -11,6 +11,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @GitHub https://github.com/nateshao
  * @Gitee https://gitee.com/nateshao
  */
-public interface CustomerRepository extends JpaRepository<Customer,Integer> {
+public interface CustomerRepository extends JpaRepository<Customer, Integer> {
     Customer findByUsername(String username);
 }

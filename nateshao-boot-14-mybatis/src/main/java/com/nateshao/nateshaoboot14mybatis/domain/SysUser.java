@@ -11,7 +11,7 @@ import lombok.Data;
  * @Gitee https://gitee.com/nateshao
  */
 @Data
-public class SysUser  {
+public class SysUser {
 
     private Integer Id;
 

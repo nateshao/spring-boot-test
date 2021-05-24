@@ -29,13 +29,13 @@ public class ScheduleTask {
      */
     @Scheduled(cron = "0 0 12 1 * ?")
 //    @Scheduled(cron = "0 */3 * * * ? ")
-    public void sendEmail(){
+    public void sendEmail() {
         //  定制邮件内容
         long totalvisit = statisticMapper.getTotalVisit();
         long totalComment = statisticMapper.getTotalComment();
         StringBuffer content = new StringBuffer();
-        content.append("博客系统总访问量为："+totalvisit+"人次").append("\n");
-        content.append("博客系统总评论量为："+totalComment+"人次").append("\n");
-        mailUtils.sendSimpleEmail(mailto,"个人博客系统流量统计情况",content.toString());
+        content.append("博客系统总访问量为：" + totalvisit + "人次").append("\n");
+        content.append("博客系统总评论量为：" + totalComment + "人次").append("\n");
+        mailUtils.sendSimpleEmail(mailto, "个人博客系统流量统计情况", content.toString());
     }
 }

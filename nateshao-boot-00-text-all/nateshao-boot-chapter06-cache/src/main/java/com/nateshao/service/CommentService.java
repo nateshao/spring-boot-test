@@ -23,23 +23,23 @@ public class CommentService {
     @Autowired
     private CommentRepository commentRepository;
 
-    @Cacheable(cacheNames = "comment",unless = "#result==null")
-    public Comment findById(int comment_id){
+    @Cacheable(cacheNames = "comment", unless = "#result==null")
+    public Comment findById(int comment_id) {
         Optional<Comment> optional = commentRepository.findById(comment_id);
-        if (optional.isPresent()){
+        if (optional.isPresent()) {
             return optional.get();
         }
         return null;
     }
 
-    @CachePut(cacheNames = "comment",key = "#result.id")
-    public Comment updateComment(Comment comment){
-        commentRepository.updateComment(comment.getAuthor(),comment.getaId());
+    @CachePut(cacheNames = "comment", key = "#result.id")
+    public Comment updateComment(Comment comment) {
+        commentRepository.updateComment(comment.getAuthor(), comment.getaId());
         return comment;
     }
 
     @CacheEvict(cacheNames = "comment")
-    public void deleteComment(int comment_id){
+    public void deleteComment(int comment_id) {
         commentRepository.deleteById(comment_id);
     }
 }

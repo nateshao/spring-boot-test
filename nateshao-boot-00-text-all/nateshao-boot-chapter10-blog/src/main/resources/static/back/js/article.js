@@ -36,7 +36,7 @@ $(document).ready(function () {
         }
     });
 
-    if($('#thumb-toggle').attr('thumb_url') != ''){
+    if ($('#thumb-toggle').attr('thumb_url') != '') {
         $('#thumb-toggle').toggles({
             off: true,
             text: {
@@ -45,7 +45,7 @@ $(document).ready(function () {
             }
         });
         $('#thumb-toggle').attr('on', 'true');
-        $('#dropzone').css('background-image', 'url('+ $('#thumb-container').attr('thumb_url') +')');
+        $('#dropzone').css('background-image', 'url(' + $('#thumb-container').attr('thumb_url') + ')');
         $('#dropzone').css('background-size', 'cover');
         $('#dropzone-container').show();
     } else {
@@ -69,12 +69,12 @@ $(document).ready(function () {
  */
 function subArticle(status) {
     var title = $('#articleForm input[name=title]').val();
-    var content =  mditor.value;
+    var content = mditor.value;
     if (title == '') {
         tale.alertWarn('请输入文章标题');
         return;
     }
-    if (title .length>25) {
+    if (title.length > 25) {
         tale.alertWarn('文章标题不能超过25个字符！');
         return;
     }
@@ -88,12 +88,12 @@ function subArticle(status) {
     var params = $("#articleForm").serialize();
     var url = $('#articleForm #id').val() != '' ? '/admin/article/modify' : '/admin/article/publish';
     tale.post({
-        url:url,
-        data:params,
+        url: url,
+        data: params,
         success: function (result) {
             if (result && result.success) {
                 tale.alertOk({
-                    text:'文章保存成功',
+                    text: '文章保存成功',
                     then: function () {
                         setTimeout(function () {
                             window.location.href = '/admin/article';

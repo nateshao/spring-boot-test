@@ -3,6 +3,7 @@ package com.nateshao.async.task;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
@@ -19,6 +20,7 @@ import java.util.concurrent.Future;
 class TaskFactoryTest {
     @Autowired
     private TaskFactory task;
+
     /**
      * 测试异步任务
      */

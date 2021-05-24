@@ -24,7 +24,7 @@ public interface ArticleMapper {
             " allow_comment, thumbnail, content)" +
             " VALUES (#{title},#{created}, #{modified}, #{tags}, #{categories}," +
             " #{allowComment}, #{thumbnail}, #{content})")
-    @Options(useGeneratedKeys=true, keyProperty="id", keyColumn="id")
+    @Options(useGeneratedKeys = true, keyProperty = "id", keyColumn = "id")
     public Integer publishArticle(Article article);
 
     // 文章发分页查询

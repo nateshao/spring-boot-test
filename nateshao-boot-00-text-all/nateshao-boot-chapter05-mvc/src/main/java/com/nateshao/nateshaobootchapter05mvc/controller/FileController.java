@@ -28,7 +28,7 @@ import java.util.UUID;
 public class FileController {
 
     @GetMapping("/toUpload")
-    public String toUpload(){
+    public String toUpload() {
         return "upload";
     }
 
@@ -39,24 +39,24 @@ public class FileController {
         model.addAttribute("uploadStatus", "上传成功！");
         for (MultipartFile file : fileUpload) {
             String fileName = file.getOriginalFilename();
-            fileName = UUID.randomUUID()+"_"+fileName;
+            fileName = UUID.randomUUID() + "_" + fileName;
             String dirPath = "F:/file/";
             File filePath = new File(dirPath);
-            if(!filePath.exists()){
+            if (!filePath.exists()) {
                 filePath.mkdirs();
             }
             try {
-                file.transferTo(new File(dirPath+fileName));
+                file.transferTo(new File(dirPath + fileName));
             } catch (Exception e) {
                 e.printStackTrace();
-                model.addAttribute("uploadStatus","上传失败： "+e.getMessage());
+                model.addAttribute("uploadStatus", "上传失败： " + e.getMessage());
             }
         }
         return "upload";
     }
 
     @GetMapping("/toDownload")
-    public String toDownload(){
+    public String toDownload() {
         return "download";
     }
 //    // 文件下载管理
@@ -84,7 +84,7 @@ public class FileController {
     // 所有类型文件下载管理
     @GetMapping("/download")
     public ResponseEntity<byte[]> fileDownload(HttpServletRequest request,
-                                               String filename) throws Exception{
+                                               String filename) throws Exception {
         // 指定要下载的文件根路径
         String dirPath = "F:/file/";
         // 创建该文件对象
@@ -92,17 +92,18 @@ public class FileController {
         // 设置响应头
         HttpHeaders headers = new HttpHeaders();
         // 通知浏览器以下载方式打开（下载前对文件名进行转码）
-        filename=getFilename(request,filename);
-        headers.setContentDispositionFormData("attachment",filename);
+        filename = getFilename(request, filename);
+        headers.setContentDispositionFormData("attachment", filename);
         // 定义以流的形式下载返回文件数据
         headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
         try {
             return new ResponseEntity<>(FileUtils.readFileToByteArray(file), headers, HttpStatus.OK);
         } catch (Exception e) {
             e.printStackTrace();
-            return new ResponseEntity<byte[]>(e.getMessage().getBytes(),HttpStatus.EXPECTATION_FAILED);
+            return new ResponseEntity<byte[]>(e.getMessage().getBytes(), HttpStatus.EXPECTATION_FAILED);
         }
     }
+
     // 根据浏览器的不同进行编码设置，返回编码后的文件名
     private String getFilename(HttpServletRequest request, String filename)
             throws Exception {
@@ -113,7 +114,7 @@ public class FileController {
         for (String keyWord : IEBrowserKeyWords) {
             if (userAgent.contains(keyWord)) {
                 //IE内核浏览器，统一为UTF-8编码显示，并对转换的+进行更正
-                return URLEncoder.encode(filename, "UTF-8").replace("+"," ");
+                return URLEncoder.encode(filename, "UTF-8").replace("+", " ");
             }
         }
         //火狐等其它浏览器统一为ISO-8859-1编码显示

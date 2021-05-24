@@ -12,7 +12,7 @@ import java.io.Serializable;
  * @Gitee https://gitee.com/nateshao
  */
 @Entity(name = "t_comment")
-public class Comment implements Serializable     {
+public class Comment implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

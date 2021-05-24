@@ -25,26 +25,27 @@ public class MyLocalResovel implements LocaleResolver {
 
         String l = httpServletRequest.getParameter("l");
         String header = httpServletRequest.getHeader("Accept-Language");
-        Locale locale=null;
+        Locale locale = null;
 
-        if(!StringUtils.isEmpty(l)){
-                String[] split = l.split("_");
-            locale=new Locale(split[0],split[1]);
-        }else {
+        if (!StringUtils.isEmpty(l)) {
+            String[] split = l.split("_");
+            locale = new Locale(split[0], split[1]);
+        } else {
             // Accept-Language: en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7
             String[] splits = header.split(",");
             String[] split = splits[0].split("-");
-            locale=new Locale(split[0],split[1]);
+            locale = new Locale(split[0], split[1]);
         }
         return locale;
     }
+
     @Override
     public void setLocale(HttpServletRequest httpServletRequest, @Nullable
             HttpServletResponse httpServletResponse, @Nullable Locale locale) {
     }
 
     @Bean
-    public LocaleResolver localeResolver(){
+    public LocaleResolver localeResolver() {
         return new MyLocalResovel();
     }
 

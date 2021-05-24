@@ -48,17 +48,22 @@ public class ProductServiceImpl implements ProductService {
             wrapper.eq("id",product.getCategoryleveloneId());
             ProductCategory productCategory = productCategoryMapper.selectOne(wrapper);
             if (productCategory != null){
-            productVO.setCategorylevelone(productCategory.getName());
-
+               productVO.setCategorylevelone(productCategory.getName());
             }
-
 
             wrapper = new QueryWrapper();
             wrapper.eq("id",product.getCategoryleveltwoId());
-            productVO.setCategoryleveltwo(productCategoryMapper.selectOne(wrapper).getName());
+            productCategory = productCategoryMapper.selectOne(wrapper);
+            if (productCategory != null){
+                productVO.setCategoryleveltwo(productCategory.getName());
+            }
+
             wrapper = new QueryWrapper();
             wrapper.eq("id",product.getCategorylevelthreeId());
-            productVO.setCategorylevelthree(productCategoryMapper.selectOne(wrapper).getName());
+            productCategory = productCategoryMapper.selectOne(wrapper);
+            if (productCategory != null){
+                productVO.setCategorylevelthree(productCategory.getName());
+            }
             productVOlist.add(productVO);
         }
         dataVO.setData(productVOlist);

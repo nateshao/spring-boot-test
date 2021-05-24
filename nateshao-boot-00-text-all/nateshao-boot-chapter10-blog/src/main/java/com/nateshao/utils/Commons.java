@@ -30,6 +30,7 @@ public class Commons {
     public static String site_url() {
         return site_url("/page/1");
     }
+
     /**
      * 返回网站链接下的全址
      *
@@ -102,7 +103,7 @@ public class Commons {
      * 截取文章摘要
      *
      * @param article 文章
-     * @param len   要截取文字的个数
+     * @param len     要截取文字的个数
      * @return
      */
     public static String intro(Article article, int len) {
@@ -114,7 +115,7 @@ public class Commons {
         } else {
             String text = MyUtils.htmlToText(MyUtils.mdToHtml(value));
             if (text.length() > len) {
-                return text.substring(0, len)+"......";
+                return text.substring(0, len) + "......";
             }
             return text;
         }
@@ -122,8 +123,9 @@ public class Commons {
 
     /**
      * 对文章内容进行格式转换，将Markdown为Html
+     *
      * @param value
-     * @return  ok
+     * @return ok
      */
     public static String article(String value) {
         if (StringUtils.isNotBlank(value)) {
@@ -139,7 +141,7 @@ public class Commons {
      * @return
      */
     public static String show_thumb(Article article) {
-        if (StringUtils.isNotBlank(article.getThumbnail())){
+        if (StringUtils.isNotBlank(article.getThumbnail())) {
             return article.getThumbnail();
         }
         int cid = article.getId();

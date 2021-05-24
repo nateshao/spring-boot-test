@@ -19,7 +19,7 @@ public class Authority implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String authority ;
+    private String authority;
 
     public Integer getId() {
         return id;

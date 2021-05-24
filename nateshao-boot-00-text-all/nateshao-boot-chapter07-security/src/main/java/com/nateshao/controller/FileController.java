@@ -25,15 +25,14 @@ import java.util.Enumeration;
 @Controller
 public class FileController {
     @GetMapping("/detail/{type}/{path}")
-    public String toDetail(@PathVariable("type")String type,@PathVariable("Path") String path){
+    public String toDetail(@PathVariable("type") String type, @PathVariable("Path") String path) {
 
-        return "detail/"+type+"/"+path;
+        return "detail/" + type + "/" + path;
     }
 
 
-
     @GetMapping("/userLogin")
-    public String toLoginPage(){
+    public String toLoginPage() {
         return "login/login";
     }
 
@@ -53,29 +52,20 @@ public class FileController {
     }
 
 
+    @GetMapping("/getuserByContext")
+    @ResponseBody
+    public void getUser2() {
+        SecurityContext context = SecurityContextHolder.getContext();
+        System.out.println("userDetails: " + context);
+
+        // 获取用户的信息
+        Authentication authentication = context.getAuthentication();
+        UserDetails principal = (UserDetails) authentication.getPrincipal();
+        System.out.println(principal);
+        System.out.println("username: " + principal.getUsername());
 
 
-        @GetMapping("/getuserByContext")
-        @ResponseBody
-        public void getUser2(){
-            SecurityContext context = SecurityContextHolder.getContext();
-            System.out.println("userDetails: "+context);
-
-            // 获取用户的信息
-            Authentication authentication=context.getAuthentication();
-            UserDetails principal = (UserDetails) authentication.getPrincipal();
-            System.out.println(principal);
-            System.out.println("username: "+principal.getUsername());
-
-
-        }
-
-
-
-
-
-
-
+    }
 
 
 }

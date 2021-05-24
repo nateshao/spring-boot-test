@@ -45,6 +45,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     /**
      * 重写configure(HttpSecurity http)方法，进行用户授权管理
+     *
      * @param http
      * @throws Exception
      */
@@ -52,8 +53,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         // 1、自定义用户访问控制
         http.authorizeRequests()
-                .antMatchers("/","/page/**","/article/**","/login").permitAll()
-                .antMatchers("/back/**","/assets/**","/user/**","/article_img/**").permitAll()
+                .antMatchers("/", "/page/**", "/article/**", "/login").permitAll()
+                .antMatchers("/back/**", "/assets/**", "/user/**", "/article_img/**").permitAll()
                 .antMatchers("/admin/**").hasRole("admin")
                 .anyRequest().authenticated();
         // 2、自定义用户登录控制
@@ -66,21 +67,21 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         String url = httpServletRequest.getParameter("url");
                         // 获取被拦截的原始访问路径
                         RequestCache requestCache = new HttpSessionRequestCache();
-                        SavedRequest savedRequest = requestCache.getRequest(httpServletRequest,httpServletResponse);
-                        if(savedRequest !=null){
+                        SavedRequest savedRequest = requestCache.getRequest(httpServletRequest, httpServletResponse);
+                        if (savedRequest != null) {
                             // 如果存在原始拦截路径，登录成功后重定向到原始访问路径
                             httpServletResponse.sendRedirect(savedRequest.getRedirectUrl());
-                        } else if(url != null && !url.equals("")){
+                        } else if (url != null && !url.equals("")) {
                             // 跳转到之前所在页面
                             URL fullURL = new URL(url);
                             httpServletResponse.sendRedirect(fullURL.getPath());
-                        }else {
+                        } else {
                             // 直接登录的用户，根据用户角色分别重定向到后台首页和前台首页
                             Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
                             boolean isAdmin = authorities.contains(new SimpleGrantedAuthority("ROLE_admin"));
-                            if(isAdmin){
+                            if (isAdmin) {
                                 httpServletResponse.sendRedirect("/admin");
-                            }else {
+                            } else {
                                 httpServletResponse.sendRedirect("/");
                             }
                         }
@@ -89,10 +90,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 // 用户登录失败处理
                 .failureHandler(new AuthenticationFailureHandler() {
                     @Override
-                    public void onAuthenticationFailure(HttpServletRequest httpServletRequest,HttpServletResponse httpServletResponse, AuthenticationException e) throws IOException, ServletException {
+                    public void onAuthenticationFailure(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, AuthenticationException e) throws IOException, ServletException {
                         // 登录失败后，取出原始页面url并追加在重定向路径上
                         String url = httpServletRequest.getParameter("url");
-                        httpServletResponse.sendRedirect("/login?error&url="+url);
+                        httpServletResponse.sendRedirect("/login?error&url=" + url);
                     }
                 });
         // 3、设置用户登录后cookie有效期，默认值
@@ -112,6 +113,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     /**
      * 重写configure(AuthenticationManagerBuilder auth)方法，进行自定义用户认证
+     *
      * @param auth
      * @throws Exception
      */
@@ -120,8 +122,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         //  密码需要设置编码器
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         //  使用JDBC进行身份认证
-        String userSQL ="select username,password,valid from t_user where username = ?";
-        String authoritySQL ="select u.username,a.authority from t_user u,t_authority a," +
+        String userSQL = "select username,password,valid from t_user where username = ?";
+        String authoritySQL = "select u.username,a.authority from t_user u,t_authority a," +
                 "t_user_authority ua where ua.user_id=u.id " +
                 "and ua.authority_id=a.id and u.username =?";
         auth.jdbcAuthentication().passwordEncoder(encoder)

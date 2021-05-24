@@ -50,21 +50,21 @@ public class ArticleServiceImpl implements IArticleService {
             article.setHits(statistic.getHits());
             article.setCommentsNum(statistic.getCommentsNum());
         }
-        PageInfo<Article> pageInfo=new PageInfo<>(articleList);
+        PageInfo<Article> pageInfo = new PageInfo<>(articleList);
         return pageInfo;
     }
 
     // 统计前10的热度文章信息
     @Override
-    public List<Article> getHeatArticles( ) {
+    public List<Article> getHeatArticles() {
         List<Statistic> list = statisticMapper.getStatistic();
-        List<Article> articlelist=new ArrayList<>();
+        List<Article> articlelist = new ArrayList<>();
         for (int i = 0; i < list.size(); i++) {
             Article article = articleMapper.selectArticleWithId(list.get(i).getArticleId());
             article.setHits(list.get(i).getHits());
             article.setCommentsNum(list.get(i).getCommentsNum());
             articlelist.add(article);
-            if(i>=9){
+            if (i >= 9) {
                 break;
             }
         }
@@ -73,15 +73,15 @@ public class ArticleServiceImpl implements IArticleService {
 
     // 根据id查询单个文章详情，并使用Redis进行缓存管理
     @Override
-    public Article selectArticleWithId(Integer id){
+    public Article selectArticleWithId(Integer id) {
         Article article = null;
         Object o = redisTemplate.opsForValue().get("article_" + id);
-        if(o!=null){
-            article=(Article)o;
-        }else{
+        if (o != null) {
+            article = (Article) o;
+        } else {
             article = articleMapper.selectArticleWithId(id);
-            if(article!=null){
-                redisTemplate.opsForValue().set("article_" + id,article);
+            if (article != null) {
+                redisTemplate.opsForValue().set("article_" + id, article);
             }
         }
         return article;

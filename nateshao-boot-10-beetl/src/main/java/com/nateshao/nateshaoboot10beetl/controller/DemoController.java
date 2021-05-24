@@ -21,22 +21,22 @@ import java.util.List;
 public class DemoController {
 
     @GetMapping
-    public ModelAndView demo(){
+    public ModelAndView demo() {
 
         ModelAndView mv = new ModelAndView();
         mv.setViewName("index.btl");
 
-        User user = new User(1,"nateshaoaaaaaaaaaa");
-        User user1 = new User(1,"nateshaobbbbbbbbbbb");
-        User user2 = new User(1,"nateshaocccccccccccc");
-        User user3 = new User(1,"nateshaoddddddddddd");
+        User user = new User(1, "nateshaoaaaaaaaaaa");
+        User user1 = new User(1, "nateshaobbbbbbbbbbb");
+        User user2 = new User(1, "nateshaocccccccccccc");
+        User user3 = new User(1, "nateshaoddddddddddd");
         List<User> arrayList = new ArrayList<>();
         arrayList.add(user);
         arrayList.add(user1);
         arrayList.add(user2);
         arrayList.add(user3);
-        mv.addObject("arrayList",arrayList);
-        mv.addObject("date",new Date());
+        mv.addObject("arrayList", arrayList);
+        mv.addObject("date", new Date());
 //        mv.addObject("username","nateshao");
         return mv;
     }
