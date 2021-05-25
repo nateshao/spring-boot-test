@@ -17,7 +17,7 @@ import java.util.List;
 public class DataVO<T> {
     private Integer code;
     private String msg;
-    private Integer count;
+    private Long count;
     private List<T> data;
 
 

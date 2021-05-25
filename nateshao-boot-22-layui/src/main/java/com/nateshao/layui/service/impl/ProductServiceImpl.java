@@ -1,6 +1,8 @@
 package com.nateshao.layui.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.nateshao.layui.entity.Product;
 import com.nateshao.layui.entity.ProductCategory;
 import com.nateshao.layui.mapper.ProductCategoryMapper;
@@ -33,13 +35,17 @@ public class ProductServiceImpl implements ProductService {
     private ProductCategoryMapper productCategoryMapper;
 
     @Override
-    public DataVO<ProductVO> findData() {
+    public DataVO<ProductVO> findData(Integer page,Integer limit) {
         DataVO dataVO = new DataVO();
         dataVO.setCode(0);
         dataVO.setMsg("");
-        dataVO.setCount(mapper.selectCount(null));
 
-        List<Product> productList = mapper.selectList(null);
+        // 分页拦截器
+        IPage<Product> productIPage = new Page<>(page,limit);
+        IPage<Product> result = mapper.selectPage(productIPage,null);
+        dataVO.setCount(result.getTotal());
+
+        List<Product> productList = result.getRecords();
         List<ProductVO> productVOlist = new ArrayList<>();
         for (Product product : productList) {
             ProductVO productVO = new ProductVO();

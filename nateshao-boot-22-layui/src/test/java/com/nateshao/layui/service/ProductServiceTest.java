@@ -25,8 +25,8 @@ class ProductServiceTest {
 
     @Test
     void test(){
-        DataVO dataVO = productService.findData();
-        int i = 0;
+//        DataVO dataVO = productService.findData();
+//        int i = 0;
     }
 
 }

@@ -13,5 +13,5 @@ import com.nateshao.layui.vo.ProductVO;
  * Description:
  */
 public interface ProductService {
-    public DataVO<ProductVO> findData();
+    public DataVO<ProductVO> findData(Integer page,Integer limit);
 }
