@@ -8,14 +8,14 @@ import com.nateshao.layui.entity.ProductCategory;
 import com.nateshao.layui.mapper.ProductCategoryMapper;
 import com.nateshao.layui.mapper.ProductMapper;
 import com.nateshao.layui.service.ProductService;
-import com.nateshao.layui.vo.DataVO;
-import com.nateshao.layui.vo.ProductVO;
+import com.nateshao.layui.vo.*;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @date Created by 邵桐杰 on 2021/5/24 22:22
@@ -26,11 +26,12 @@ import java.util.List;
  * @Gitee https://gitee.com/nateshao
  * Description:
  */
+
 @Service
 public class ProductServiceImpl implements ProductService {
-    @Autowired
-    private ProductMapper mapper;
 
+    @Autowired
+    private ProductMapper productMapper;
     @Autowired
     private ProductCategoryMapper productCategoryMapper;
 
@@ -39,42 +40,65 @@ public class ProductServiceImpl implements ProductService {
         DataVO dataVO = new DataVO();
         dataVO.setCode(0);
         dataVO.setMsg("");
-
-        // 分页拦截器
         IPage<Product> productIPage = new Page<>(page,limit);
-        IPage<Product> result = mapper.selectPage(productIPage,null);
+        IPage<Product> result = productMapper.selectPage(productIPage,null);
         dataVO.setCount(result.getTotal());
-
         List<Product> productList = result.getRecords();
-        List<ProductVO> productVOlist = new ArrayList<>();
+        List<ProductVO> productVOList = new ArrayList<>();
         for (Product product : productList) {
             ProductVO productVO = new ProductVO();
             BeanUtils.copyProperties(product,productVO);
             QueryWrapper wrapper = new QueryWrapper();
             wrapper.eq("id",product.getCategoryleveloneId());
             ProductCategory productCategory = productCategoryMapper.selectOne(wrapper);
-            if (productCategory != null){
-               productVO.setCategorylevelone(productCategory.getName());
+            if(productCategory!=null){
+                productVO.setCategorylevelone(productCategory.getName());
             }
 
             wrapper = new QueryWrapper();
             wrapper.eq("id",product.getCategoryleveltwoId());
             productCategory = productCategoryMapper.selectOne(wrapper);
-            if (productCategory != null){
+            if(productCategory!=null) {
                 productVO.setCategoryleveltwo(productCategory.getName());
             }
 
             wrapper = new QueryWrapper();
             wrapper.eq("id",product.getCategorylevelthreeId());
             productCategory = productCategoryMapper.selectOne(wrapper);
-            if (productCategory != null){
+            if(productCategory!=null) {
                 productVO.setCategorylevelthree(productCategory.getName());
             }
-            productVOlist.add(productVO);
+            productVOList.add(productVO);
         }
-        dataVO.setData(productVOlist);
 
+        dataVO.setData(productVOList);
 
         return dataVO;
+    }
+
+    @Override
+    public BarVO getBarVO() {
+        List<ProductBarVO> list = productMapper.findAllProductBarVO();
+        List<String> names = new ArrayList<>();
+        List<Integer> values = new ArrayList<>();
+        for (ProductBarVO productBarVO : list) {
+            names.add(productBarVO.getName());
+            values.add(productBarVO.getCount());
+        }
+        BarVO barVO = new BarVO();
+        barVO.setNames(names);
+        barVO.setValues(values);
+        return barVO;
+    }
+
+    @Override
+    public List<PieVO> getPieVO() {
+        List<ProductBarVO> list = productMapper.findAllProductBarVO();
+        List<PieVO> pieVOList = list.stream()
+                .map(e -> new PieVO(
+                        e.getCount(),
+                        e.getName()
+                )).collect(Collectors.toList());
+        return pieVOList;
     }
 }

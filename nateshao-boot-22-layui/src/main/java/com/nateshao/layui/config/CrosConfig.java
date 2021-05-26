@@ -13,8 +13,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  * @Gitee https://gitee.com/nateshao
  * Description:
  */
+
 //@Configuration
 //public class CrosConfig implements WebMvcConfigurer {
+//
 //    @Override
 //    public void addCorsMappings(CorsRegistry registry) {
 //        registry.addMapping("/*")

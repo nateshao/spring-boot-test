@@ -13,12 +13,13 @@ import org.springframework.context.annotation.Configuration;
  * @Gitee https://gitee.com/nateshao
  * Description:
  */
+
 @Configuration
 public class MyBatisPlusConfig {
 
     @Bean
     public PaginationInterceptor paginationInterceptor(){
-        return paginationInterceptor();
+        return new PaginationInterceptor();
     }
-
 }
+
