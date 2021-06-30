@@ -1,6 +1,7 @@
 package com.nateshao.orm.mybatis.mapper;
 
 import cn.hutool.core.util.IdUtil;
+import cn.hutool.json.JSONUtil;
 import com.nateshao.orm.mybatis.MybatisApplicationTest;
 import com.nateshao.orm.mybatis.entity.User;
 import lombok.extern.slf4j.Slf4j;
@@ -35,6 +36,7 @@ public class UserMapperTest extends MybatisApplicationTest {
     public void selectAllUser() {
         List<User> userList = userMapper.selectAllUser();
         Assert.assertTrue(CollUtil.isNotEmpty(userList));
+        System.out.println(JSONUtil.toJsonStr(userList));
         log.debug("【userList】= {}", userList);
     }
 
