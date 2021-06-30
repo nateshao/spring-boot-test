@@ -1,4 +1,4 @@
-# spring-boot-demo-orm-mybatis
+# demo-orm-mybatis
 
 > 此 demo 演示了 Spring Boot 如何与原生的 mybatis 整合，使用了 mybatis 官方提供的脚手架 `mybatis-spring-boot-starter `可以很容易的和 Spring Boot 整合。
 
@@ -10,16 +10,16 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-boot-demo-orm-mybatis</artifactId>
+    <artifactId>demo-orm-mybatis</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>spring-boot-demo-orm-mybatis</name>
+    <name>demo-orm-mybatis</name>
     <description>Demo project for Spring Boot</description>
 
     <parent>
-        <groupId>com.xkcoding</groupId>
-        <artifactId>spring-boot-demo</artifactId>
+        <groupId>com.nateshao</groupId>
+        <artifactId>spring-boot-test</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
@@ -63,10 +63,11 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
     </dependencies>
 
     <build>
-        <finalName>spring-boot-demo-orm-mybatis</finalName>
+        <finalName>demo-orm-mybatis</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -76,27 +77,34 @@
     </build>
 
 </project>
+
 ```
 
-## SpringBootDemoOrmMybatisApplication.java
+## MybatisApplication.java
 
 ```java
-/**
- * <p>
- * 启动类
- * </p>
- *
- * @author yangkai.shen
- * @date Created in 2018-11-08 10:52
- */
-@MapperScan(basePackages = {"com.xkcoding.orm.mybatis.mapper"})
-@SpringBootApplication
-public class SpringBootDemoOrmMybatisApplication {
-
-    public static void main(String[] args) {
-        SpringApplication.run(SpringBootDemoOrmMybatisApplication.class, args);
-    }
-}
+package com.nateshao.orm.mybatis;
+       
+       import org.mybatis.spring.annotation.MapperScan;
+       import org.springframework.boot.SpringApplication;
+       import org.springframework.boot.autoconfigure.SpringBootApplication;
+       
+       /**
+        * @date Created by 邵桐杰 on 2021/6/30 22:36
+        * @微信公众号 千羽的编程时光
+        * @个人网站 www.nateshao.cn
+        * @博客 https://nateshao.gitee.io
+        * @GitHub https://github.com/nateshao
+        * @Gitee https://gitee.com/nateshao
+        * Description: 启动类
+        */
+       @MapperScan(basePackages = {"com.nateshao.orm.mybatis.mapper"})
+       @SpringBootApplication
+       public class MybatisApplication {
+           public static void main(String[] args) {
+               SpringApplication.run(MybatisApplication.class,args);
+           }
+       }
 ```
 
 ## application.yml
@@ -104,11 +112,10 @@ public class SpringBootDemoOrmMybatisApplication {
 ```yaml
 spring:
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/spring-boot-demo?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false&serverTimezone=GMT%2B8
+    url: jdbc:mysql://127.0.0.1:3306/spring-boot-test?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false&serverTimezone=GMT%2B8
     username: root
-    password: root
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    type: com.zaxxer.hikari.HikariDataSource
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
     initialization-mode: always
     continue-on-error: true
     schema:
@@ -126,8 +133,8 @@ spring:
       connection-timeout: 30000
 logging:
   level:
-    com.xkcoding: debug
-    com.xkcoding.orm.mybatis.mapper: trace
+    com.nateshao: debug
+    com.nateshao.orm.mybatis.mapper: trace
 mybatis:
   configuration:
     # 下划线转驼峰
@@ -139,18 +146,28 @@ mybatis:
 ## UserMapper.java
 
 ```java
+package com.nateshao.orm.mybatis.mapper;
+
+import com.nateshao.orm.mybatis.entity.User;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
+
 /**
- * <p>
- * User Mapper
- * </p>
- *
- * @author yangkai.shen
- * @date Created in 2018-11-08 10:54
+ * @date Created by 邵桐杰 on 2021/6/30 22:38
+ * @微信公众号 千羽的编程时光
+ * @个人网站 www.nateshao.cn
+ * @博客 https://nateshao.gitee.io
+ * @GitHub https://github.com/nateshao
+ * @Gitee https://gitee.com/nateshao
+ * Description:
  */
 @Mapper
 @Component
 public interface UserMapper {
-
     /**
      * 查询所有用户
      *
@@ -192,7 +209,7 @@ public interface UserMapper {
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.xkcoding.orm.mybatis.mapper.UserMapper">
+<mapper namespace="com.nateshao.orm.mybatis.mapper.UserMapper">
 
     <insert id="saveUser">
         INSERT INTO `orm_user` (`name`,
@@ -226,26 +243,51 @@ public interface UserMapper {
 ## UserMapperTest.java
 
 ```java
+package com.nateshao.orm.mybatis.mapper;
+
+import cn.hutool.core.util.IdUtil;
+import cn.hutool.json.JSONUtil;
+import com.nateshao.orm.mybatis.MybatisApplicationTest;
+import com.nateshao.orm.mybatis.entity.User;
+import lombok.extern.slf4j.Slf4j;
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import cn.hutool.core.collection.CollUtil;
+import cn.hutool.core.date.DateTime;
+import cn.hutool.crypto.SecureUtil;
+import java.util.List;
+import org.junit.Assert;
+
+
 /**
- * <p>
- * UserMapper 测试类
- * </p>
- *
- * @author yangkai.shen
- * @date Created in 2018-11-08 11:25
+ * @date Created by 邵桐杰 on 2021/6/30 22:44
+ * @微信公众号 千羽的编程时光
+ * @个人网站 www.nateshao.cn
+ * @博客 https://nateshao.gitee.io
+ * @GitHub https://github.com/nateshao
+ * @Gitee https://gitee.com/nateshao
+ * Description: 测试类
  */
 @Slf4j
-public class UserMapperTest extends SpringBootDemoOrmMybatisApplicationTests {
+public class UserMapperTest extends MybatisApplicationTest {
+
     @Autowired
     private UserMapper userMapper;
 
+    /**
+     * 测试查询所有
+     */
     @Test
     public void selectAllUser() {
         List<User> userList = userMapper.selectAllUser();
         Assert.assertTrue(CollUtil.isNotEmpty(userList));
+        System.out.println(JSONUtil.toJsonStr(userList));
         log.debug("【userList】= {}", userList);
     }
 
+    /**
+     * 测试根据主键查询单个
+     */
     @Test
     public void selectUserById() {
         User user = userMapper.selectUserById(1L);
@@ -253,6 +295,9 @@ public class UserMapperTest extends SpringBootDemoOrmMybatisApplicationTests {
         log.debug("【user】= {}", user);
     }
 
+    /**
+     * 测试保存
+     */
     @Test
     public void saveUser() {
         String salt = IdUtil.fastSimpleUUID();
@@ -261,6 +306,9 @@ public class UserMapperTest extends SpringBootDemoOrmMybatisApplicationTests {
         Assert.assertEquals(1, i);
     }
 
+    /**
+     * 测试根据主键删除
+     */
     @Test
     public void deleteById() {
         int i = userMapper.deleteById(1L);
