@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * Description:
  */
 @Configuration
-@MapperScan(basePackages = {"com.xkcoding.orm.mybatis.plus.mapper"})
+@MapperScan(basePackages = {"com.nateshao.orm.mybatis.plus.mapper"})
 @EnableTransactionManagement
 public class MybatisPlusConfig {
     /**

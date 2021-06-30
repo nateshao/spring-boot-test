@@ -4,7 +4,6 @@ spring:
     username: root
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
-    type: com.zaxxer.hikari.HikariDataSource
     initialization-mode: always
     continue-on-error: true
     schema:
