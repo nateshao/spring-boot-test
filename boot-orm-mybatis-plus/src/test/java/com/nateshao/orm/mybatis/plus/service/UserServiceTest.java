@@ -8,6 +8,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.nateshao.orm.mybatis.plus.OrmMybatisPlusApplication;
+import com.nateshao.orm.mybatis.plus.OrmMybatisPlusApplicationTest;
 import com.nateshao.orm.mybatis.plus.entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.util.Lists;
@@ -28,7 +29,7 @@ import java.util.stream.Collectors;
  * Description:
  */
 @Slf4j
-public class UserServiceTest extends OrmMybatisPlusApplication {
+public class UserServiceTest extends OrmMybatisPlusApplicationTest {
     @Autowired
     private UserService userService;
 
