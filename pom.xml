@@ -12,8 +12,9 @@
         <module>boot-orm-mybatis</module>
         <module>boot-orm-mybatis-plus</module>
         <module>boot-orm-jpa</module>
-        <module>boot-swagger</module>
-        <module>boot-swagger</module>
+        <module>boot-elasticsearch</module>
+        <module>boot-jvm</module>
+        <module>boot-rbac-shiro</module>
     </modules>
 
     <name>spring-boot-test</name>
