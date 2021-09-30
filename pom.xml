@@ -14,6 +14,7 @@
         <module>boot-orm-jpa</module>
         <module>boot-swagger</module>
         <module>boot-swagger</module>
+        <module>boot-rbac-shiro</module>
     </modules>
 
     <name>spring-boot-test</name>
