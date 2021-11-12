@@ -15,6 +15,7 @@
         <module>boot-elasticsearch</module>
         <module>boot-jvm</module>
         <module>boot-rbac-shiro</module>
+        <module>boot-swagger</module>
     </modules>
 
     <name>spring-boot-test</name>
