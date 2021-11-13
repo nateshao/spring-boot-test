@@ -1,4 +1,4 @@
-package com.nateshao.swagger.entity;
+package com.nateshao.swagger.domain;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 
 /**
- * @date Created by 邵桐杰 on 2021/11/12 22:50
+ * @date Created by 邵桐杰 on 2021/11/13 11:12
  * @微信公众号 程序员千羽
  * @个人网站 www.nateshao.cn
  * @博客 https://nateshao.gitee.io
@@ -21,7 +21,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @ApiModel(value = "用户实体", description = "User Entity")
-public class User implements Serializable {
+public  class User implements Serializable {
     private static final long serialVersionUID = 5057954049311281252L;
     /**
      * 主键id

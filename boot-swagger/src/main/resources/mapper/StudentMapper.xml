@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace表示命名空间 -->
+<mapper namespace="com.nateshao.swagger.mapper.StudentMapper">
+
+    <select id="selectAll" resultType="com.nateshao.swagger.domain.Student">
+        select * from student
+    </select>
+
+    <select id="queryStudentsById" parameterType="string" resultType="com.nateshao.swagger.domain.Student">
+        select * from student where stuNo = #{stuNo}
+    </select>
+
+    <insert id="addStudent" parameterType="com.nateshao.swagger.domain.Student">
+        insert student(studName,stuNo,sex,nation,political,school,major,birthday,entranceTime)
+        values (#{studName},#{stuNo},#{sex},#{nation},#{political},#{school},#{major},#{birthday},#{entranceTime})
+    </insert>
+
+    <update id="updateByPrimaryKey" parameterType="com.nateshao.swagger.domain.Student">
+        update student set   where BILL_CODE = #{billCode,jdbcType=VARCHAR}
+    </update>
+    <!--
+
+    int updateByPrimaryKey(Student student);
+
+    int deleteByPrimaryKey(String id);
+
+    Student selectByPrimaryKey(String id);
+    -->
+
+
+
+
+</mapper>
