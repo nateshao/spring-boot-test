@@ -84,10 +84,10 @@ public class StudentController {
         return AjaxResult.success("成功插入" + i + "记录" + "学号为：" + stuNo);
     }
 
-    @PutMapping("editBillByCode")
+    @PutMapping("editStudentByStuNo")
     @ApiOperation("根据学号修改学生信息")
 //    @ApiImplicitParam(name = "stuNo", value = "学号")
-    public AjaxResult editstudentByStuNo(@RequestBody @Validated Student student) {
+    public AjaxResult editStudentByStuNo(@RequestBody @Validated Student student) {
 //        if (StringUtils.isEmpty(stuNo) || !stuNo.equals(student.getStuNo())) {
 //            return AjaxResult.message("学号不正确");
 //        }

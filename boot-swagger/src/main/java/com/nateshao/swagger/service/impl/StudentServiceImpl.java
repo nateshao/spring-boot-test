@@ -85,7 +85,7 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public int delStudentByStuNo(int stuNo) {
         Student student1 = studentMapper.queryStudentsById(stuNo);
-        if (student1 == null) {
+        if (student1.getStuNo() == 0) {
             throw new BaseException("学号不存在,请勿操作");
         }
         return studentMapper.delStudentByStuNo(stuNo);
