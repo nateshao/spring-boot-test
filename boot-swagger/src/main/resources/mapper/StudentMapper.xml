@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace表示命名空间 -->
+<mapper namespace="com.nateshao.swagger.mapper.StudentMapper">
+
+    <select id="queryStudent" resultType="com.nateshao.swagger.domain.Student">
+        select * from student
+    </select>
+
+    <select id="queryStudentsById" parameterType="integer" resultType="com.nateshao.swagger.domain.Student">
+        select * from student where stuNo = #{stuNo}
+    </select>
+
+    <insert id="addStudent" parameterType="map">
+        insert student(studName,stuNo,sex,nation,political,school,major,birthday,entranceTime)
+        values (#{studName},#{stuNo},#{sex},#{nation},#{political},#{school},#{major},#{birthday},#{entranceTime})
+    </insert>
+
+    <update id="editstudentByStuNo" parameterType="com.nateshao.swagger.domain.Student">
+        update student set
+
+        <trim suffixOverrides=",">
+            <if test="studName != null">studName = #{studName,jdbcType=CHAR},</if>
+            <if test="sex != null">sex = #{sex,jdbcType=CHAR},</if>
+            <if test="nation != null">nation = #{nation,jdbcType=VARCHAR},</if>
+            <if test="political != null">political = #{political,jdbcType=VARCHAR},</if>
+            <if test="school != null">school = #{school,jdbcType=VARCHAR},</if>
+            <if test="major != null">major = #{major,jdbcType=VARCHAR},</if>
+            <if test="birthday != null">birthday = #{birthday,jdbcType=DATE},</if>
+            <if test="entranceTime != null">entranceTime = #{entranceTime,jdbcType=DATE},</if>
+        </trim>
+        where stuNo = #{stuNo,jdbcType=INTEGER}
+    </update>
+
+    <delete id="delStudentByStuNo" parameterType="integer">
+        delete  from student where stuNo = #{stuNo,jdbcType=INTEGER}
+    </delete>
+</mapper>
