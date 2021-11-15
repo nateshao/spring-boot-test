@@ -1,9 +1,11 @@
 package com.nateshao.swagger.mapper;
 
 import com.nateshao.swagger.domain.Student;
-import org.mapstruct.Mapper;
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @date Created by 邵桐杰 on 2021/11/13 10:14
@@ -14,23 +16,30 @@ import java.util.List;
  * @Gitee https://gitee.com/nateshao
  * Description:
  */
+//@Repository
 @Mapper
 public interface StudentMapper {
     /**
      * 查询所有
      */
-    public List<Student> selectAll();
+    public List<Student> queryStudent();
 
-    public Student queryStudentsById(String stuNo);
+    public Student queryStudentsById(Integer stuNo);
 
-    int addStudent(Student student);
-    /**
-     * 根据主键修改
-     * 空值也会覆盖掉数据库的值
-     */
-    int updateByPrimaryKey(Student student);
+//    public int insertStudentById(Student student);
 
-    int deleteByPrimaryKey(String stuNo);
+    int addStudent(Map<String, Object> map);
 
-    Student selectByPrimaryKey(String stuNo);
+    int editstudentByStuNo(Student student);
+
+    int delStudentByStuNo(int stuNo);
+//    int addStudent(Student student);
+//    /**
+//     * 根据主键修改
+//     * 空值也会覆盖掉数据库的值
+//     */
+//    int updateByPrimaryKey(Student student);
+//
+//    int deleteByPrimaryKey(Integer stuNo);
+
 }

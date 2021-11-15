@@ -15,15 +15,19 @@ import java.util.List;
  */
 public interface StudentService {
 
-    public List<Student> selectList();
+    public List<Student> queryStudent();
 
-    public Student queryStudentsById(String id);
+    public Student queryStudentsById(Integer id);
 
-    int add(Student student);
+    int addStudent(String studName, int stuNo, String sex, String nation, String political, String school, String major, String birthday, String entranceTime);
 
-    int edit(Student student);
+    void editstudentByStuNo(Student student);
 
-    int del(String id);
+    int delStudentByStuNo(int stuNo);
 
-    Student getInfo(String id);
+//
+//    int edit(Student student);
+//
+//    int del(int id);
+
 }

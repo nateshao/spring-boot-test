@@ -1,5 +1,6 @@
 package com.nateshao.swagger;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -12,6 +13,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Gitee https://gitee.com/nateshao
  * Description:
  */
+@MapperScan("com.nateshao.swagger.mapper")
 @SpringBootApplication
 public class SwaggerApplication {
     public static void main(String[] args) {

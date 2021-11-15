@@ -19,16 +19,19 @@ import java.util.Date;
  * Description:
  */
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
+@ApiModel(value = "学生实体", description = "Student Entity")
 public class Student implements Serializable {
     @ApiModelProperty("学生姓名")
     private String studName;
-    @ApiModelProperty("学号")
+    @ApiModelProperty(value = "学号", required = true)
     private int stuNo;
     @ApiModelProperty("性别")
     private String sex;
     @ApiModelProperty("民族")
     private String nation;
-    @ApiModelProperty("")
+    @ApiModelProperty("政治面貌")
     private String political;
     @ApiModelProperty("所在学校")
     private String school;
@@ -36,9 +39,7 @@ public class Student implements Serializable {
     private String major;
     @ApiModelProperty("出生年月日")
     private Date birthday;
-    @ApiModelProperty("")
+    @ApiModelProperty("入学时间")
     private Date entranceTime;
-
-
 
 }
