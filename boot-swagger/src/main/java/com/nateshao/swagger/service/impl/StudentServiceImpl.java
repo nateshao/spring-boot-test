@@ -80,8 +80,6 @@ public class StudentServiceImpl implements StudentService {
             studentEdit.setNation(student.getNation());
             studentMapper.editstudentByStuNo(student);
         }
-
-
     }
 
     @Override
