@@ -21,7 +21,7 @@ public class BeetlsqlConfig {
         HikariDataSource dataSource = new HikariDataSource();
         dataSource.setUsername("root");
         dataSource.setPassword("123456");
-        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+        dataSource.setDriverClasstudName("com.mysql.cj.jdbc.Driver");
         dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/user?serverTimezone=UTC");
 
         return dataSource;

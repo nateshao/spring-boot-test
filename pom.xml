@@ -16,6 +16,7 @@
         <module>boot-rbac-shiro</module>
         <module>boot-swagger</module>
         <module>boot-ratelimit-redis</module>
+        <module>boot-orm-mybatis-redis</module>
     </modules>
 
     <name>spring-boot-test</name>
