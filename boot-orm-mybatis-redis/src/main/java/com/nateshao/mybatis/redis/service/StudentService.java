@@ -23,5 +23,5 @@ public interface StudentService {
 
     int updateStudent(Student student);
 
-    int add(Student student);
+    int addStudent(Student student);
 }

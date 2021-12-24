@@ -20,7 +20,12 @@ import java.util.List;
 public class StudentController {
 
     @Autowired
-    StudentService studentService;
+    private StudentService studentService;
+
+    @PostMapping("/addStudent")
+    public int addStudent(Student student) {
+        return studentService.addStudent(student);
+    }
 
     @GetMapping("/findAll")
     public List<Student> findAll() {
@@ -36,12 +41,13 @@ public class StudentController {
     public Student findById(@PathVariable("stuNo") Integer stuNo) {
         return studentService.findById(stuNo);
     }
+
     @PutMapping("/updateStudent")
     public int updateStudent(Student student) {
         return studentService.updateStudent(student);
     }
 
-    @PostMapping("/del/{stuNo}")
+    @DeleteMapping("/del/{stuNo}")
     public int del(@PathVariable("stuNo") Integer stuNo) {
         return studentService.del(stuNo);
     }
