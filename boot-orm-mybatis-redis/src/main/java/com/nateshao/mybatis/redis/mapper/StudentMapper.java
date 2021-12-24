@@ -28,7 +28,7 @@ public interface StudentMapper {
     int del(Integer stuNo);
 
     @Update("update student set studName=#{studName},stuNo=#{stuNo},sex=#{sex},nation=#{nation},political=#{political} ,school=#{school},major=#{major},birthday=#{birthday},entranceTime=#{entranceTime}where stuNo=#{stuNo}")
-    int modify(Student student);
+    int updateStudent(Student student);
 
     @Insert("insert into student(studName,stuNo,sex,nation,political,school,major,birthday,entranceTime) " +
             "values(#{studName},#{stuNo},#{sex},#{nation},#{political},#{school},#{major},#{birthday},#{entranceTime})")

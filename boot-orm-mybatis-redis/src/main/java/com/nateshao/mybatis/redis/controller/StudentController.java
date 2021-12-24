@@ -36,15 +36,15 @@ public class StudentController {
     public Student findById(@PathVariable("stuNo") Integer stuNo) {
         return studentService.findById(stuNo);
     }
+    @PutMapping("/updateStudent")
+    public int updateStudent(Student student) {
+        return studentService.updateStudent(student);
+    }
 
-    @PostMapping("/student/{stuNo}")
+    @PostMapping("/del/{stuNo}")
     public int del(@PathVariable("stuNo") Integer stuNo) {
         return studentService.del(stuNo);
     }
 
-    @PutMapping("/student")
-    public int modify(Student student) {
-        return studentService.modify(student);
-    }
 
 }

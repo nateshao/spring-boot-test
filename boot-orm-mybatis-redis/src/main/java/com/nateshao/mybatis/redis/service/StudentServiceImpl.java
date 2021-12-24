@@ -84,9 +84,9 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public int modify(Student student) {
+    public int updateStudent(Student student) {
         //修改数据库中的数据
-        int count = studentMapper.modify(student);
+        int count = studentMapper.updateStudent(student);
 
         ValueOperations operations = redisTemplate.opsForValue();
         //缓存存在

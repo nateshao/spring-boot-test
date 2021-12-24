@@ -21,7 +21,7 @@ public interface StudentService {
 
     int del(Integer stuNo);
 
-    int modify(Student student);
+    int updateStudent(Student student);
 
     int add(Student student);
 }
