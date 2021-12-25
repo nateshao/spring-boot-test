@@ -1,29 +1,10 @@
-## 新增 
-POST: http://localhost:8080/api/addUser
+## 查询所有
+GET: http://localhost:8080/findAll
 
-```json
-{"id":1,"name":"nateshao","age":18}
-```
+![](https://gitee.com/nateshao/images/raw/master/img/20211225183811.png)
 
+## 通过学号查询
 
+GET: http://localhost:8080/findById/2021
 
-## 查询 
-GET: http://localhost:8080/api/getUserId?id=18
-
-
-
-## 修改 
-
-PUT: http://localhost:8080/api/updateUser
-
-```json
-{"id":1,"name":"nateshao","age":19}
-```
-
-
-
-
-
-## 删除 
-delete：http://localhost:8080/api/deleteUser?id=1
-
+![image-20211225183909697](https://gitee.com/nateshao/images/raw/master/img/20211225183912.png)
