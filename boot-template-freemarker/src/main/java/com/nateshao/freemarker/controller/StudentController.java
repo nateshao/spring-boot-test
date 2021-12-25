@@ -3,7 +3,10 @@ package com.nateshao.freemarker.controller;
 import com.nateshao.freemarker.service.StudentService;
 import com.nateshao.freemarker.vo.Student;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 /**
@@ -15,7 +18,7 @@ import java.util.List;
  * @Gitee https://gitee.com/nateshao
  * Description:
  */
-@RestController
+@Controller
 public class StudentController {
 
     @Autowired
@@ -27,13 +30,16 @@ public class StudentController {
     }
 
     @GetMapping("/findAll")
-    public List<Student> findAll() {
-        return studentService.findAll();
+    public String findAll(Model model) {
+        List<Student> studentList = studentService.findAll();
+        model.addAttribute("studentList",studentList);
+        return "studentList";
     }
 
     @GetMapping("/findById/{stuNo}")
-    public Student findById(@PathVariable("stuNo") Integer stuNo) {
-        return studentService.findById(stuNo);
+    public String findById(Model model, @PathVariable("stuNo") Integer stuNo) {
+        model.addAttribute("student", studentService.findById(stuNo));
+        return "student";
     }
 
     @PutMapping("/updateStudent")
