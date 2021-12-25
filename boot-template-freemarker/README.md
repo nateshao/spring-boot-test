@@ -1,4 +1,7 @@
+# SpringBoot 整合freemarker
+
 ## 查询所有
+
 GET: http://localhost:8080/findAll
 
 ![](https://gitee.com/nateshao/images/raw/master/img/20211225183811.png)
