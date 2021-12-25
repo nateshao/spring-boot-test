@@ -17,6 +17,7 @@
         <module>boot-swagger</module>
         <module>boot-ratelimit-redis</module>
         <module>boot-orm-mybatis-redis</module>
+        <module>boot-template-freemarker</module>
     </modules>
 
     <name>spring-boot-test</name>
