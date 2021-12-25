@@ -24,15 +24,10 @@ public class StudentController {
     @Autowired
     private StudentService studentService;
 
-    @PostMapping("/addStudent")
-    public int addStudent(Student student) {
-        return studentService.addStudent(student);
-    }
-
     @GetMapping("/findAll")
     public String findAll(Model model) {
         List<Student> studentList = studentService.findAll();
-        model.addAttribute("studentList",studentList);
+        model.addAttribute("studentList", studentList);
         return "studentList";
     }
 
@@ -40,6 +35,11 @@ public class StudentController {
     public String findById(Model model, @PathVariable("stuNo") Integer stuNo) {
         model.addAttribute("student", studentService.findById(stuNo));
         return "student";
+    }
+
+    @PostMapping("/addStudent")
+    public int addStudent(Student student) {
+        return studentService.addStudent(student);
     }
 
     @PutMapping("/updateStudent")
