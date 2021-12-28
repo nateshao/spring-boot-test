@@ -1,6 +1,7 @@
 package com.nateshao.mybatis.redis.vo;
 
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -23,6 +24,8 @@ public class Student implements Serializable {
     private String political;
     private String school;
     private String major;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date birthday;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date entranceTime;
 }

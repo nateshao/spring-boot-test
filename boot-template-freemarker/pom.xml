@@ -67,5 +67,10 @@
             <version>20.1.0</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-annotations</artifactId>
+            <version>1.5.20</version>
+        </dependency>
     </dependencies>
 </project>

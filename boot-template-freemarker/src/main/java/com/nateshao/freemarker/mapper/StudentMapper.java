@@ -14,36 +14,18 @@ import java.util.List;
  * Description:
  */
 public interface StudentMapper {
-    @Select("select * from student")
-    List<Student> findAll();
+    /**
+     * 查询所有
+     */
+    public List<Student> queryStudent();
 
-    @Select("select * from student where stuNo=#{stuNo}")
-    Student findBystuNo(Integer stuNo);
+    public Student queryStudentsById(Integer stuNo);
 
-    @Delete("delete from student where stuNo=#{stuNo}")
-    int del(Integer stuNo);
-
-//    @Update("update student set " +
-//            "studName=#{studName},sex=#{sex},nation=#{nation},political=#{political},school=#{school},major=#{major},birthday=#{birthday},entranceTime=#{entranceTime} " +
-//            "where stuNo=#{stuNo}")
-//      int updateStudent(Student student);
-
-    @Update("update student set\n" +
-            "           studName = #{studName,jdbcType=CHAR}\n" +
-            "           sex = #{sex,jdbcType=CHAR}\n" +
-            "           nation = #{nation,jdbcType=VARCHAR}\n" +
-            "           political = #{political,jdbcType=VARCHAR}\n" +
-            "           school = #{school,jdbcType=VARCHAR}\n" +
-            "           major = #{major,jdbcType=VARCHAR}\n" +
-            "           birthday = #{birthday,jdbcType=DATE}\n" +
-            "           entranceTime = #{entranceTime,jdbcType=DATE}\n" +
-            "        \n" +
-            "    where stuNo = #{stuNo,jdbcType=INTEGER}")
-    int updateStudent(Student student);
-
-    @Insert("insert into student(studName,stuNo,sex,nation,political,school,major,birthday,entranceTime) " +
-            "values(#{studName},#{stuNo},#{sex},#{nation},#{political},#{school},#{major},#{birthday},#{entranceTime})")
     int addStudent(Student student);
+
+    int editstudentByStuNo(Student student);
+
+    int delStudentByStuNo(int stuNo);
 
 
 }

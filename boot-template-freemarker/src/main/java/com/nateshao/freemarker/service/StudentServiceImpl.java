@@ -30,23 +30,23 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public List<Student> findAll() {
-        return studentMapper.findAll();
+        return studentMapper.queryStudent();
     }
 
     @Override
     public Student findById(Integer stuNo) {
-        return studentMapper.findBystuNo(stuNo);
+        return studentMapper.queryStudentsById(stuNo);
     }
 
     @Override
     public int del(Integer stuNo) {
-        int count = studentMapper.del(stuNo);
+        int count = studentMapper.delStudentByStuNo(stuNo);
         return count;
     }
 
     @Override
     public int updateStudent(Student student) {
-        int count = studentMapper.updateStudent(student);
+        int count = studentMapper.editstudentByStuNo(student);
         return count;
     }
 

@@ -26,7 +26,10 @@ public class StudentController {
     public int addStudent(Student student) {
         return studentService.addStudent(student);
     }
-
+    @PutMapping("/updateStudent")
+    public int updateStudent(Student student) {
+        return studentService.updateStudent(student);
+    }
     @GetMapping("/findAll")
     public List<Student> findAll() {
         return studentService.findAll();
@@ -40,11 +43,6 @@ public class StudentController {
     @GetMapping("/findById/{stuNo}")
     public Student findById(@PathVariable("stuNo") Integer stuNo) {
         return studentService.findById(stuNo);
-    }
-
-    @PutMapping("/updateStudent")
-    public int updateStudent(Student student) {
-        return studentService.updateStudent(student);
     }
 
     @DeleteMapping("/del/{stuNo}")

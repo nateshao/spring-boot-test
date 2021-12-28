@@ -3,9 +3,9 @@
 //import com.nateshao.nateshaobootchapter05mvc.servletComponent.MyFilter;
 //import com.nateshao.nateshaobootchapter05mvc.servletComponent.MyListener;
 //import com.nateshao.nateshaobootchapter05mvc.servletComponent.MyServlet;
-//import org.springframework.boot.web.servlet.FilterRegistrationBean;
-//import org.springframework.boot.web.servlet.ServletListenerRegistrationBean;
-//import org.springframework.boot.web.servlet.ServletRegistrationBean;
+//import org.springframework.boot.templates.servlet.FilterRegistrationBean;
+//import org.springframework.boot.templates.servlet.ServletListenerRegistrationBean;
+//import org.springframework.boot.templates.servlet.ServletRegistrationBean;
 //import org.springframework.context.annotation.Bean;
 //import org.springframework.context.annotation.Configuration;
 //
