@@ -18,6 +18,7 @@
         <module>boot-ratelimit-redis</module>
         <module>boot-orm-mybatis-redis</module>
         <module>boot-template-freemarker</module>
+        <module>boot-template-thymeleaf</module>
     </modules>
 
     <name>spring-boot-test</name>
