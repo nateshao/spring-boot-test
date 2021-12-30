@@ -1,23 +1,31 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title></title>
 </head>
 <body>
-<!--组件化-->
-<div th:include="header.html::header"></div>
-
-yyy
-<div th:text="${k1}"></div>
-<div th:text="${user.username}"></div>
-
-
-<div th:each="user:${userList}">
-    <span th:text="#{Sysuser.username}"></span>
-    <span th:text="${userStat.index}"></span>
-</div>
-
-<div th:text="${#dates.format(date,'yyyyMMdd')}">themeleaf日期</div>
+<a th:href="@{/intoAdd}">添加</a>
+<table>
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>用户名</th>
+        <th>密码</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user : ${list}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.username}"></td>
+        <td th:text="${user.password}"></td>
+        <td><a th:href="@{/delete(id=${user.id})}">删除</a> &hearts;
+            <a th:href="@{/intoUpdate(id=${user.id})}">修改</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>
