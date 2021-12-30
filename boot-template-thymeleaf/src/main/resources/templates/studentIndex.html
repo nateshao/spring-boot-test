@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title></title>
+</head>
+<body>
+<a th:href="@{/addStudent}">添加</a>
+<table>
+    <thead>
+    <tr>
+        <th>学号</th>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>名族</th>
+        <th>政治面貌</th>
+        <th>学校</th>
+        <th>职责</th>
+        <th>生日</th>
+        <th>入学时间</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="student : ${studentList}">
+        <td th:text="${student.stuNo}"></td>
+        <td th:text="${student.studName}"></td>
+        <td th:text="${student.sex}"></td>
+        <td th:text="${student.nation}"></td>
+        <td th:text="${student.political}"></td>
+        <td th:text="${student.school}"></td>
+        <td th:text="${student.major}"></td>
+        <td th:text="${student.birthday}"></td>
+        <td th:text="${student.entranceTime}"></td>
+<!--        <td><a th:href="@{/delete(id=${student.id})}">删除</a> &hearts;-->
+<!--            <a th:href="@{/intoUpdate(id=${student.id})}">修改</a>-->
+<!--        </td>-->
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

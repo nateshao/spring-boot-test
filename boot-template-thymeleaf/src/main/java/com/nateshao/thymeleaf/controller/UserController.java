@@ -5,7 +5,7 @@ import com.nateshao.thymeleaf.vo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,7 +24,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping("/index")
+    @GetMapping("/index")
     public String showUser(Model model){
         List<User> list = userService.findAll();
         model.addAttribute("list",list);
@@ -38,7 +38,7 @@ public class UserController {
     }
 
     // 添加用户
-    @RequestMapping("/add")
+    @PostMapping("/add")
     public String add(User user){
         userService.add(user);
         return "redirect:/index";
@@ -48,7 +48,7 @@ public class UserController {
     @RequestMapping("/delete")
     public String delete(int id){
         userService.delete(id);
-        return "redirect:/";
+        return "redirect:/index";
     }
 
     // 进入修改用户

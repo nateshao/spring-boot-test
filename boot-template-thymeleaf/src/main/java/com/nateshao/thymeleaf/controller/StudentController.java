@@ -2,6 +2,7 @@ package com.nateshao.thymeleaf.controller;
 
 import com.nateshao.thymeleaf.service.StudentService;
 import com.nateshao.thymeleaf.vo.Student;
+import com.nateshao.thymeleaf.vo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,11 +24,22 @@ public class StudentController {
     @Autowired
     private StudentService studentService;
 
-    @GetMapping("/findAll")
-    public String findAll(Model model) {
+    @GetMapping("/getStudent")
+    public String getStudent(Model model){
         List<Student> studentList = studentService.findAll();
-        model.addAttribute("studentList", studentList);
-        return "studentList";
+        model.addAttribute("studentList",studentList);
+        return "studentIndex";
+    }
+    // 进入添加界面
+    @RequestMapping("/intoAddStudent")
+    public String intoAdd(){
+        return "addStudent";
+    }
+    // 添加用户
+    @RequestMapping("/addStudent")
+    public String add(Student student){
+        studentService.addStudent(student);
+        return "redirect:/studentIndex";
     }
 
     @GetMapping("/findById/{stuNo}")
