@@ -13,6 +13,7 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/boot-elasticsearch/pom.xml" />
         <option value="$PROJECT_DIR$/boot-freemarker/pom.xml" />
       </set>
     </option>
