@@ -13,7 +13,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Gitee https://gitee.com/nateshao
  * Description:
  */
-//指定要扫描的mapper包
 @MapperScan("com.nateshao.mybatis.redis.mapper")
 @SpringBootApplication
 public class MybatisRedisApplication {

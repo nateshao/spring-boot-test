@@ -43,6 +43,10 @@ INSERT INTO `student` VALUES ('1125', '千羽', '男', '汉', 'aaaa', '2021-11-1
 INSERT INTO `student` VALUES ('1126', '千羽', '男', '汉', 'aaaa', '2021-11-11', '广东', '千羽', '2021-11-11');
 INSERT INTO `student` VALUES ('1128', '千羽', '男', '汉', 'aaaa', '2021-11-11', '广东', '千羽', '2021-11-11');
 INSERT INTO `student` VALUES ('2021', '邵桐杰', '男', '汉', '321', null, '广东白云学院', '学生', null);
+INSERT INTO `student` VALUES ('2022', '邵桐杰', '男', '汉', '321', null, '广东白云学院', '学生', null);
+INSERT INTO `student` VALUES ('2023', '邵桐杰', '男', '汉', '321', null, '广东白云学院', '学生', null);
+INSERT INTO `student` VALUES ('2023', '邵桐杰', '男', '汉', '321', null, '广东白云学院', '学生', null);
+INSERT INTO `student` VALUES ('2024', '邵桐杰', '男', '汉', '321', null, '广东白云学院', '学生', null);
 INSERT INTO `student` VALUES ('11224', '千羽', '男', '汉', 'aaaa', '2021-11-11', '广东', '千羽', '2021-11-11');
 INSERT INTO `student` VALUES ('20212', '千羽', '男', '汉', 'string', '2021-11-15', '广东', '学生', '2021-11-15');
 INSERT INTO `student` VALUES ('20213', '邵桐杰', '男', '汉', '321', null, '广东白云学院', '学生', null);
