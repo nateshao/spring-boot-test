@@ -25,7 +25,7 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("/index")
-    public String showUser(Model model){
+    public String index(Model model){
         List<User> list = userService.findAll();
         model.addAttribute("list",list);
         return "index";

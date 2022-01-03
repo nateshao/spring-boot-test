@@ -25,9 +25,4 @@ public interface StudentService {
 
     int delStudentByStuNo(int stuNo);
 
-//
-//    int edit(Student student);
-//
-//    int del(int id);
-
 }

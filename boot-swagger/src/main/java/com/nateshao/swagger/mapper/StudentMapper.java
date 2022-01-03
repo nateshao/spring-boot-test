@@ -26,20 +26,10 @@ public interface StudentMapper {
 
     public Student queryStudentsById(Integer stuNo);
 
-//    public int insertStudentById(Student student);
-
     int addStudent(Map<String, Object> map);
 
     int editstudentByStuNo(Student student);
 
     int delStudentByStuNo(int stuNo);
-//    int addStudent(Student student);
-//    /**
-//     * 根据主键修改
-//     * 空值也会覆盖掉数据库的值
-//     */
-//    int updateByPrimaryKey(Student student);
-//
-//    int deleteByPrimaryKey(Integer stuNo);
 
 }
