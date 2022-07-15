@@ -15,6 +15,9 @@
       <set>
         <option value="$PROJECT_DIR$/boot-elasticsearch/pom.xml" />
         <option value="$PROJECT_DIR$/boot-freemarker/pom.xml" />
+        <option value="$PROJECT_DIR$/boot-rbac-security/pom.xml" />
+        <option value="$PROJECT_DIR$/boot-socail-wechat/pom.xml" />
+        <option value="$PROJECT_DIR$/boot-token/pom.xml" />
       </set>
     </option>
   </component>
